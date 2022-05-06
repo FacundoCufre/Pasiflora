@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+
+$blanco: #f6f3ea;
+$azul: rgb(52, 83, 158);
+$celeste: #a1caf1;
+$verdeAgua: #c6e6ee;
+$lila: #c0b8da;
+
+$fuente1: 'Gabriela', serif;
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+body{
+    background-color: $blanco;
+}
+
+header{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $azul;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px 1px $azul;
+    .logo{
+        height: 80px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin-left: 100px;
+    }
+    .barra{
+        width: 200px;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        .busqueda{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 1px $celeste solid;
+            padding-top: 15px;
+            padding-left: 17px;
+            transition: all .5s;
+            display: flex;
+            flex-direction: row;
+            color: $celeste;
+            &:hover{
+                width: 150px;
+                border-radius: 10px;
+            }
+            #busqueda{
+                width: 100%;
+                height: 100%;
+                outline: none;
+                background: none;
+                border: none;
+                padding-left: 20px;
+                padding-bottom: 17px;
+                color: $celeste;
+                &:hover{
+                    cursor: text;
+                }
+            }
+            #busqueda:placeholder-shown{ 
+                opacity: 0;
+                transition: all .3s;
+            }
+            &:hover #busqueda:placeholder-shown{ 
+                opacity: .7;
+            }
+        }
+        .favoritos{
+            height: 50px;
+            width: 50px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-family: $fuente1;
+            color: $celeste;
+            border-radius: 30px;
+            margin-left: 10px;
+            border: 1px $celeste solid;
+            transition: all .5s;
+            span{
+               position: absolute;
+               opacity: 0;
+               transition: all .1s;
+            }
+            &:hover{
+                width: 150px;
+                border-radius: 10px;
+                justify-content: flex-start;
+                padding-left: 12px;
+            }
+            &:hover span{
+                width: 50px;
+                margin-left: 5px;
+                position: relative;
+                opacity: 1;
+                transition: all .8s;
+            }
+        }
+    }
+}
+
+main{
+    width: 100%;
+    .imagenes-decorativas{
+        height: 90vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../img/Recurso7.png);
+        background-repeat: space;
+        background-attachment: fixed;
+        background-position: center;
+        .imagenes-decorativas--div{
+            height: 310px;
+            width: 290px;
+            background-color: $blanco;
+            margin: 30px;
+        }
+        .imagen-1{
+            margin-top: 20px;
+            box-shadow: rgb(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
+        }
+        .imagen-2{
+            margin-top: 70px;
+            box-shadow: rgba(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
+        }
+        .imagen-3{
+            margin-bottom: 100px;
+            box-shadow: rgba(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
+        }
+    }
+    .conteiner-info{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        .info{
+            width: 50%;
+            height: 100%;
+            background-color: $azul;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 50px 0 150px;
+            p{
+                text-align: center;
+                font-size: 30px;
+                color: $blanco;
+                font-family: $fuente1;
+            }
+        }
+        .foto{
+            width: 50%;
+            height: 100%;
+            background-image: url(../img/Recurso12.png);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    .filtros{
+        margin-top: 90px;
+        height: 40px;
+        width: 1400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0 150px 0 150px;
+        .filtros-boton{
+            height: 100%;
+            width: 90px;
+            border-bottom: $azul 1px solid;
+            transition: all .2s;
+            color: $azul;
+            font-family: $fuente1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 10px; 
+            &:hover{
+                padding-bottom: 0;
+                border-bottom: $celeste 12px solid;
+                color: $celeste;
+            }
+        }
+    }
+}
