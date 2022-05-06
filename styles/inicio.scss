@@ -31,7 +31,7 @@ header{
     flex-direction: row;
     justify-content: space-between;
     background-color: $azul;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     box-shadow: 0px 0px 5px 1px $azul;
     .logo{
         height: 80px;
@@ -143,14 +143,23 @@ main{
         .imagen-1{
             margin-top: 20px;
             box-shadow: rgb(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
+            background-image: url(../img/collaresDoradosMuestras.jpeg);
+            background-position: center;
+            background-size: cover;
         }
         .imagen-2{
             margin-top: 70px;
             box-shadow: rgba(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
+            background-image: url(../img/collarEstrellaMuestra.jpeg);
+            background-position: center;
+            background-size: cover;
         }
         .imagen-3{
             margin-bottom: 100px;
             box-shadow: rgba(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
+            background-image: url(../img/collarPiedrasMuestra.jpeg);
+            background-position: center;
+            background-size: cover;
         }
     }
     .conteiner-info{
@@ -158,28 +167,26 @@ main{
         width: 100%;
         display: flex;
         flex-direction: row;
+        background-image: url(../img/collarMandalaMuestra.jpeg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
         .info{
             width: 50%;
             height: 100%;
-            background-color: $azul;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 0 50px 0 150px;
+            transition: all .5s;
+            background-color: $azul;
+            filter:opacity(80%);
             p{
                 text-align: center;
                 font-size: 30px;
                 color: $blanco;
                 font-family: $fuente1;
             }
-        }
-        .foto{
-            width: 50%;
-            height: 100%;
-            background-image: url(../img/Recurso12.png);
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
         }
     }
 
