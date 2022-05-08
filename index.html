@@ -14,8 +14,13 @@
 
 <body>
 
+<section class="novedad" id="novedad">
+    <div class="novedad--texto"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis at cupiditate omnis molestiae harum.</span></div>
+    <div class="novedad--check"><input type="checkbox" id="check1"/>
+        <label for="check1"><i class="fa-solid fa-xmark"></i></label></div>
+</section>
 <header>
-    <div class="logo"><img width="100%" src="./img/pasiflora-logo.png" alt=""></div>
+    <div class="logo"><span>Pasiflora</span></div>
     <nav class="barra">
         <div class="busqueda"><i class="fas fa-search"></i><label for="busqueda"><input id="busqueda" type="text" placeholder="Buscar"></label></div>
         <div class="favoritos"><i class="fa-solid fa-heart"></i><span>Favoritos</span></div>
@@ -23,12 +28,18 @@
 </header>
 <main>
     <section class="imagenes-decorativas">
-        <div data-aos="fade-up-right" style="transition: all 1s;" class="imagenes-decorativas--div imagen-1"></div>
-        <div data-aos="fade-up" style="transition: all 1s;" class="imagenes-decorativas--div imagen-2"></div>
-        <div data-aos="fade-up-left" style="transition: all 1s;" class="imagenes-decorativas--div imagen-3"></div>
+        <div class="imagenes-decorativas--div imagen-1"></div>
+        <div class="imagenes-decorativas--div imagen-2"></div>
+        <div class="imagenes-decorativas--div imagen-3"></div>
     </section>
     <section class="conteiner-info">
         <div data-aos="fade-right" class="info"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure perspiciatis cum corporis necessitatibus incidunt, quaerat harum suscipit fugiat ut maxime, atque aliquid repellendus recusandae. Omnis voluptate ducimus eius. Culpa, odit.</p></div>
+    </section>
+    <section class="nuevos">
+        <div class="nuevos-titulo"><h2>Nuevos Productos</h2></div>
+        <div class="producto"></div>
+        <div class="producto"></div>
+        <div class="producto"></div>
     </section>
     <section class="filtros">
         <div class="filtros-boton"><span>TODOS</span></div>
@@ -37,7 +48,6 @@
         <div class="filtros-boton"><span>filtro4</span></div>
         <div class="filtros-boton"><span>filtro5</span></div>
     </section>
-    
 </main>
 
     <script>

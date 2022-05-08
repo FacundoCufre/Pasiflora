@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
 
 $blanco: #f6f3ea;
-$azul: rgb(52, 83, 158);
+$azul: #34539e;
+$azulOscuro: rgb(39, 54, 68);
 $celeste: #a1caf1;
-$verdeAgua: #c6e6ee;
-$lila: #c0b8da;
 
 $fuente1: 'Gabriela', serif;
 
@@ -23,16 +22,54 @@ body{
     background-color: $blanco;
 }
 
+.novedad{
+    height: 40px;
+    width: 100%;
+    background-color: $celeste;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    opacity: .9;
+    position: sticky;
+    top: 0;
+    
+    .novedad--texto{
+        height: 100%;
+        width: 75%;
+        margin-left: 15%;
+        text-align: center;
+        line-height: 40px;
+        color: $azulOscuro;
+
+    }
+    .novedad--check{
+        height: 100%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input[type=checkbox] + label i{
+            cursor: pointer;
+        }
+        input[type=checkbox]{
+            visibility: hidden;
+        }
+    }
+}
+
 header{
-    height: 100px;
+    height: 70px;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    background-color: $azul;
+    background-color: $azulOscuro;
     margin-bottom: 2px;
-    box-shadow: 0px 0px 5px 1px $azul;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    box-shadow: rgba(39, 54, 68, 0.09) 0px 2px 1px, rgba(39, 54, 68, 0.09) 0px 4px 2px, rgba(39, 54, 68, 0.09) 0px 8px 4px, rgba(39, 54, 68, 0.09) 0px 16px 8px, rgba(39, 54, 68, 0.09) 0px 32px 16px;
     .logo{
         height: 80px;
         width: 80px;
@@ -40,6 +77,9 @@ header{
         align-items: center;
         padding: 5px;
         margin-left: 100px;
+        color: $blanco;
+        font-size: 30px;
+        font-family: $fuente1;
     }
     .barra{
         width: 200px;
@@ -50,16 +90,16 @@ header{
         align-items: center;
         margin-right: 20px;
         .busqueda{
-            height: 50px;
-            width: 50px;
+            height: 40px;
+            width: 40px;
             border-radius: 50%;
-            border: 1px $celeste solid;
-            padding-top: 15px;
-            padding-left: 17px;
+            border: 1px $blanco solid;
+            padding-top: 12px;
+            padding-left: 12px;
             transition: all .5s;
             display: flex;
             flex-direction: row;
-            color: $celeste;
+            color: $blanco;
             &:hover{
                 width: 150px;
                 border-radius: 10px;
@@ -71,8 +111,8 @@ header{
                 background: none;
                 border: none;
                 padding-left: 20px;
-                padding-bottom: 17px;
-                color: $celeste;
+                padding-bottom: 12px;
+                color: $blanco;
                 &:hover{
                     cursor: text;
                 }
@@ -86,18 +126,18 @@ header{
             }
         }
         .favoritos{
-            height: 50px;
-            width: 50px;
+            height: 40px;
+            width: 40px;
             font-size: 20px;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             font-family: $fuente1;
-            color: $celeste;
+            color: $blanco;
             border-radius: 30px;
             margin-left: 10px;
-            border: 1px $celeste solid;
+            border: 1px $blanco solid;
             transition: all .5s;
             span{
                position: absolute;
@@ -126,40 +166,32 @@ main{
     .imagenes-decorativas{
         height: 90vh;
         width: 100%;
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 600px 400px;
+        grid-template-rows: 300px 300px;
         justify-content: center;
-        align-items: center;
-        background-image: url(../img/Recurso7.png);
-        background-repeat: space;
-        background-attachment: fixed;
-        background-position: center;
+        margin-top: 10px;
         .imagenes-decorativas--div{
-            height: 310px;
-            width: 290px;
             background-color: $blanco;
-            margin: 30px;
+            margin: 25px;
+            background-position: center;
+            background-size: cover;
+            box-shadow: rgb(39, 54, 68, 0.25) 0px 54px 55px, rgba(39, 54, 68, 0.12) 0px -12px 30px, rgba(39, 54, 68, 0.12) 0px 4px 6px, rgba(39, 54, 68, 0.17) 0px 12px 13px, rgba(39, 54, 68, 0.09) 0px -3px 5px;
         }
         .imagen-1{
-            margin-top: 20px;
-            box-shadow: rgb(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
             background-image: url(../img/collaresDoradosMuestras.jpeg);
-            background-position: center;
-            background-size: cover;
+            grid-column: 1/2;
+            grid-row: 1/3;
         }
         .imagen-2{
-            margin-top: 70px;
-            box-shadow: rgba(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
             background-image: url(../img/collarEstrellaMuestra.jpeg);
-            background-position: center;
-            background-size: cover;
+            grid-column: 2/3;
+            grid-row: 1/2;
         }
         .imagen-3{
-            margin-bottom: 100px;
-            box-shadow: rgba(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
             background-image: url(../img/collarPiedrasMuestra.jpeg);
-            background-position: center;
-            background-size: cover;
+            grid-column: 2/3;
+            grid-row: 2/3;
         }
     }
     .conteiner-info{
@@ -179,7 +211,7 @@ main{
             align-items: center;
             padding: 0 50px 0 150px;
             transition: all .5s;
-            background-color: $azul;
+            background-color: $azulOscuro;
             filter:opacity(80%);
             p{
                 text-align: center;
@@ -215,5 +247,31 @@ main{
                 color: $celeste;
             }
         }
+    }
+}
+
+.nuevos{
+    height: 100vh;
+    width: 100%;
+    padding: 0 10% 0 10%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 30% 70%;
+    .nuevos-titulo{
+        grid-column: 1/4;
+        grid-row: 1/2;
+        text-align: center;
+        border-bottom: $azulOscuro 1px solid;
+        color: $azulOscuro;
+        font-size: 50px;
+        font-family: $fuente1;
+    }
+    .producto{
+        height: 350px;
+        width: 320px;
+        background-color: #34539e;
+        grid-row: 2/3;
     }
 }

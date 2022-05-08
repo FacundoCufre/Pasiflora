@@ -14,16 +14,52 @@ body {
   background-color: #f6f3ea;
 }
 
+.novedad {
+  height: 40px;
+  width: 100%;
+  background-color: #a1caf1;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  opacity: 0.9;
+  position: sticky;
+  top: 0;
+}
+.novedad .novedad--texto {
+  height: 100%;
+  width: 75%;
+  margin-left: 15%;
+  text-align: center;
+  line-height: 40px;
+  color: rgb(39, 54, 68);
+}
+.novedad .novedad--check {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.novedad .novedad--check input[type=checkbox] + label i {
+  cursor: pointer;
+}
+.novedad .novedad--check input[type=checkbox] {
+  visibility: hidden;
+}
+
 header {
-  height: 100px;
+  height: 70px;
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(52, 83, 158);
+  background-color: rgb(39, 54, 68);
   margin-bottom: 2px;
-  box-shadow: 0px 0px 5px 1px rgb(52, 83, 158);
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  box-shadow: rgba(39, 54, 68, 0.09) 0px 2px 1px, rgba(39, 54, 68, 0.09) 0px 4px 2px, rgba(39, 54, 68, 0.09) 0px 8px 4px, rgba(39, 54, 68, 0.09) 0px 16px 8px, rgba(39, 54, 68, 0.09) 0px 32px 16px;
 }
 header .logo {
   height: 80px;
@@ -32,6 +68,9 @@ header .logo {
   align-items: center;
   padding: 5px;
   margin-left: 100px;
+  color: #f6f3ea;
+  font-size: 30px;
+  font-family: "Gabriela", serif;
 }
 header .barra {
   width: 200px;
@@ -43,16 +82,16 @@ header .barra {
   margin-right: 20px;
 }
 header .barra .busqueda {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
-  border: 1px #a1caf1 solid;
-  padding-top: 15px;
-  padding-left: 17px;
+  border: 1px #f6f3ea solid;
+  padding-top: 12px;
+  padding-left: 12px;
   transition: all 0.5s;
   display: flex;
   flex-direction: row;
-  color: #a1caf1;
+  color: #f6f3ea;
 }
 header .barra .busqueda:hover {
   width: 150px;
@@ -65,8 +104,8 @@ header .barra .busqueda #busqueda {
   background: none;
   border: none;
   padding-left: 20px;
-  padding-bottom: 17px;
-  color: #a1caf1;
+  padding-bottom: 12px;
+  color: #f6f3ea;
 }
 header .barra .busqueda #busqueda:hover {
   cursor: text;
@@ -79,18 +118,18 @@ header .barra .busqueda:hover #busqueda:placeholder-shown {
   opacity: 0.7;
 }
 header .barra .favoritos {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   font-size: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-family: "Gabriela", serif;
-  color: #a1caf1;
+  color: #f6f3ea;
   border-radius: 30px;
   margin-left: 10px;
-  border: 1px #a1caf1 solid;
+  border: 1px #f6f3ea solid;
   transition: all 0.5s;
 }
 header .barra .favoritos span {
@@ -118,41 +157,33 @@ main {
 main .imagenes-decorativas {
   height: 90vh;
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 600px 400px;
+  grid-template-rows: 300px 300px;
   justify-content: center;
-  align-items: center;
-  background-image: url(../img/Recurso7.png);
-  background-repeat: space;
-  background-attachment: fixed;
-  background-position: center;
+  margin-top: 10px;
 }
 main .imagenes-decorativas .imagenes-decorativas--div {
-  height: 310px;
-  width: 290px;
   background-color: #f6f3ea;
-  margin: 30px;
+  margin: 25px;
+  background-position: center;
+  background-size: cover;
+  box-shadow: rgba(39, 54, 68, 0.25) 0px 54px 55px, rgba(39, 54, 68, 0.12) 0px -12px 30px, rgba(39, 54, 68, 0.12) 0px 4px 6px, rgba(39, 54, 68, 0.17) 0px 12px 13px, rgba(39, 54, 68, 0.09) 0px -3px 5px;
 }
 main .imagenes-decorativas .imagen-1 {
-  margin-top: 20px;
-  box-shadow: rgba(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
   background-image: url(../img/collaresDoradosMuestras.jpeg);
-  background-position: center;
-  background-size: cover;
+  grid-column: 1/2;
+  grid-row: 1/3;
 }
 main .imagenes-decorativas .imagen-2 {
-  margin-top: 70px;
-  box-shadow: rgba(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
   background-image: url(../img/collarEstrellaMuestra.jpeg);
-  background-position: center;
-  background-size: cover;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 main .imagenes-decorativas .imagen-3 {
-  margin-bottom: 100px;
-  box-shadow: rgba(52, 83, 158, 0.25) 0px 54px 55px, rgba(52, 83, 158, 0.12) 0px -12px 30px, rgba(52, 83, 158, 0.12) 0px 4px 6px, rgba(52, 83, 158, 0.17) 0px 12px 13px, rgba(52, 83, 158, 0.09) 0px -3px 5px;
   background-image: url(../img/collarPiedrasMuestra.jpeg);
-  background-position: center;
-  background-size: cover;
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 main .conteiner-info {
   height: 100vh;
@@ -172,7 +203,7 @@ main .conteiner-info .info {
   align-items: center;
   padding: 0 50px 0 150px;
   transition: all 0.5s;
-  background-color: rgb(52, 83, 158);
+  background-color: rgb(39, 54, 68);
   filter: opacity(80%);
 }
 main .conteiner-info .info p {
@@ -193,9 +224,9 @@ main .filtros {
 main .filtros .filtros-boton {
   height: 100%;
   width: 90px;
-  border-bottom: rgb(52, 83, 158) 1px solid;
+  border-bottom: #34539e 1px solid;
   transition: all 0.2s;
-  color: rgb(52, 83, 158);
+  color: #34539e;
   font-family: "Gabriela", serif;
   display: flex;
   align-items: center;
@@ -206,6 +237,32 @@ main .filtros .filtros-boton:hover {
   padding-bottom: 0;
   border-bottom: #a1caf1 12px solid;
   color: #a1caf1;
+}
+
+.nuevos {
+  height: 100vh;
+  width: 100%;
+  padding: 0 10% 0 10%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 30% 70%;
+}
+.nuevos .nuevos-titulo {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  text-align: center;
+  border-bottom: rgb(39, 54, 68) 1px solid;
+  color: rgb(39, 54, 68);
+  font-size: 50px;
+  font-family: "Gabriela", serif;
+}
+.nuevos .producto {
+  height: 350px;
+  width: 320px;
+  background-color: #34539e;
+  grid-row: 2/3;
 }
 
 /*# sourceMappingURL=inicio.css.map */
