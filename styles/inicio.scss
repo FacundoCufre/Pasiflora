@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
 
 $blanco: #f6f3ea;
 $azul: #34539e;
-$azulOscuro: rgb(39, 54, 68);
+$azulOscuro: #273644;
 $celeste: #a1caf1;
 
 $fuente1: 'Gabriela', serif;
+$fuente2: 'Cormorant Garamond', serif;
 
 html{
     scroll-behavior: smooth;
@@ -26,7 +28,7 @@ body{
     height: 40px;
     width: 100%;
     background-color: $celeste;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     flex-direction: row;
     opacity: .9;
@@ -66,20 +68,19 @@ header{
     justify-content: space-between;
     background-color: $azulOscuro;
     margin-bottom: 2px;
-    z-index: 1;
+    z-index: 2;
     position: sticky;
     top: 0;
     box-shadow: rgba(39, 54, 68, 0.09) 0px 2px 1px, rgba(39, 54, 68, 0.09) 0px 4px 2px, rgba(39, 54, 68, 0.09) 0px 8px 4px, rgba(39, 54, 68, 0.09) 0px 16px 8px, rgba(39, 54, 68, 0.09) 0px 32px 16px;
     .logo{
         height: 80px;
-        width: 80px;
+        width: 200px;
         display: flex;
         align-items: center;
-        padding: 5px;
-        margin-left: 100px;
+        margin-left: 60px;
         color: $blanco;
-        font-size: 30px;
-        font-family: $fuente1;
+        font-size: 40px;
+        font-family: $fuente2;
     }
     .barra{
         width: 200px;
@@ -176,20 +177,55 @@ main{
             margin: 25px;
             background-position: center;
             background-size: cover;
+            position: relative;
+            .imagen-texto{
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                height: 100%;
+                width: 100%;
+                transition: all .2s;
+                color: $blanco;
+                font-family: $fuente2;
+                z-index: -1;
+                background-color: $azulOscuro;
+                opacity: .7;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                cursor: pointer;
+                h2{
+                    cursor: pointer;
+                }
+                .h2-1{
+                    font-size: 40px;
+                }
+                .h2-2{
+                    font-size: 25px;
+                }
+            }
+            &:hover .imagen-texto{
+                z-index: 1;
+            }
+        }
+        #imagen-1, #imagen-2, #imagen-3{
+            width: 100%;
+            height: 100%;
             box-shadow: rgb(39, 54, 68, 0.25) 0px 54px 55px, rgba(39, 54, 68, 0.12) 0px -12px 30px, rgba(39, 54, 68, 0.12) 0px 4px 6px, rgba(39, 54, 68, 0.17) 0px 12px 13px, rgba(39, 54, 68, 0.09) 0px -3px 5px;
+            background-position: center;
+            background-size: cover;
+            transition: all .4s;
         }
         .imagen-1{
-            background-image: url(../img/collaresDoradosMuestras.jpeg);
             grid-column: 1/2;
             grid-row: 1/3;
         }
         .imagen-2{
-            background-image: url(../img/collarEstrellaMuestra.jpeg);
             grid-column: 2/3;
             grid-row: 1/2;
         }
         .imagen-3{
-            background-image: url(../img/collarPiedrasMuestra.jpeg);
             grid-column: 2/3;
             grid-row: 2/3;
         }
@@ -197,12 +233,14 @@ main{
     .conteiner-info{
         height: 100vh;
         width: 100%;
+        margin-top: 20px;
         display: flex;
         flex-direction: row;
         background-image: url(../img/collarMandalaMuestra.jpeg);
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
+        z-index: 2;
         .info{
             width: 50%;
             height: 100%;
@@ -225,7 +263,7 @@ main{
     .filtros{
         margin-top: 90px;
         height: 40px;
-        width: 1400px;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -250,28 +288,72 @@ main{
     }
 }
 
-.nuevos{
-    height: 100vh;
+.nuevos, .ofertas{
     width: 100%;
     padding: 0 10% 0 10%;
-    display: grid;
+    display: flex;
     justify-items: center;
     align-items: center;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 30% 70%;
-    .nuevos-titulo{
-        grid-column: 1/4;
-        grid-row: 1/2;
-        text-align: center;
+    flex-direction: column;
+    .nuevos-titulo, .ofertas-titulo{
         border-bottom: $azulOscuro 1px solid;
         color: $azulOscuro;
-        font-size: 50px;
-        font-family: $fuente1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: 0 20px 10px 20px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        height: 100px;
+        h2{
+            font-size: 30px;
+            font-family: $fuente2;
+        }
+        a{
+            font-size: 15px;
+            font-family: $fuente1;
+            text-decoration: none;
+            cursor: pointer;
+            height: 30px;
+            width: 80px;
+            border: 1px solid $azulOscuro;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h4{
+                cursor: pointer; 
+                color: $azulOscuro;
+            }
+            &:hover{
+                background-color: $azulOscuro;
+            }
+            &:hover h4{
+                color: $blanco;
+            }
+        }
+        
+        
+        
     }
-    .producto{
-        height: 350px;
-        width: 320px;
-        background-color: #34539e;
-        grid-row: 2/3;
+    .nuevos-productos, .ofertas-productos{
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        .producto{
+            height: 350px;
+            width: 320px;
+            background-color: $blanco;
+            grid-row: 2/3;
+            box-shadow: rgba(39, 54, 68, 0.25) 0px 4px 8px -2px, rgba(39, 54, 68, 0.08) 0px 0px 0px 1px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
     }
+    
 }
