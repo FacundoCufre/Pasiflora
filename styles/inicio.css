@@ -79,7 +79,7 @@ header .logo {
 }
 
 header .barra {
-  width: 200px;
+  width: 190px;
   height: 60px;
   display: flex;
   flex-direction: row;
@@ -87,84 +87,49 @@ header .barra {
   align-items: center;
   margin-right: 20px;
 }
-
-header .barra .busqueda {
+header .barra .tienda, header .barra .favoritos {
   height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  border: 1px #f6f3ea solid;
-  padding-top: 12px;
-  padding-left: 12px;
-  transition: all .5s;
+  font-size: 16px;
   display: flex;
-  flex-direction: row;
-  color: #f6f3ea;
-}
-
-header .barra .busqueda:hover {
-  width: 150px;
-  border-radius: 10px;
-}
-
-header .barra .busqueda #busqueda {
-  width: 100%;
-  height: 100%;
-  outline: none;
-  background: none;
-  border: none;
-  padding-left: 20px;
-  padding-bottom: 12px;
-  color: #f6f3ea;
-}
-
-header .barra .busqueda #busqueda:hover {
-  cursor: text;
-}
-
-header .barra .busqueda #busqueda:placeholder-shown {
-  opacity: 0;
-  transition: all .3s;
-}
-
-header .barra .busqueda:hover #busqueda:placeholder-shown {
-  opacity: .7;
-}
-
-header .barra .favoritos {
-  height: 40px;
-  width: 40px;
-  font-size: 20px;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Gabriela", serif;
+  font-family: "Cormorant Garamond", serif;
   color: #f6f3ea;
-  border-radius: 30px;
-  margin-left: 10px;
-  border: 1px #f6f3ea solid;
-  transition: all .5s;
-}
-
-header .barra .favoritos span {
-  position: absolute;
-  opacity: 0;
-  transition: all .1s;
-}
-
-header .barra .favoritos:hover {
-  width: 150px;
-  border-radius: 10px;
-  justify-content: flex-start;
-  padding-left: 12px;
-}
-
-header .barra .favoritos:hover span {
-  width: 50px;
-  margin-left: 5px;
   position: relative;
-  opacity: 1;
-  transition: all .8s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+header .barra .tienda a, header .barra .favoritos a {
+  padding-bottom: 2px;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  color: #f6f3ea;
+  text-decoration: none;
+}
+header .barra .tienda div, header .barra .favoritos div {
+  height: 30px;
+  position: absolute;
+  width: 0;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+header .barra .tienda:hover div, header .barra .favoritos:hover div {
+  width: 100%;
+  border-bottom: 1px solid #f6f3ea;
+}
+header .barra .tienda:hover a, header .barra .favoritos:hover a {
+  letter-spacing: 2px;
+}
+header .barra .tienda {
+  width: 65px;
+}
+header .barra .favoritos {
+  width: 105px;
+  margin-left: 10px;
+  padding-left: 15px;
+  border-left: 1px solid #f6f3ea;
 }
 
 main {
@@ -278,35 +243,6 @@ main .conteiner-info .info p {
   font-size: 30px;
   color: #f6f3ea;
   font-family: "Gabriela", serif;
-}
-
-main .filtros {
-  margin-top: 90px;
-  height: 40px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 0 150px 0 150px;
-}
-
-main .filtros .filtros-boton {
-  height: 100%;
-  width: 90px;
-  border-bottom: #34539e 1px solid;
-  transition: all .2s;
-  color: #34539e;
-  font-family: "Gabriela", serif;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: 10px;
-}
-
-main .filtros .filtros-boton:hover {
-  padding-bottom: 0;
-  border-bottom: #a1caf1 12px solid;
-  color: #a1caf1;
 }
 
 .consideraciones {
