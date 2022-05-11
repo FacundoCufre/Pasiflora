@@ -15,19 +15,18 @@ body {
   background-color: #f6f3ea;
 }
 
-.novedad {
+.aviso {
   height: 40px;
   width: 100%;
   background-color: #a1caf1;
   z-index: 3;
   display: flex;
   flex-direction: row;
-  opacity: .9;
+  opacity: 0.9;
   position: sticky;
   top: 0;
 }
-
-.novedad .novedad--texto {
+.aviso .aviso--texto {
   height: 100%;
   width: 75%;
   margin-left: 15%;
@@ -35,20 +34,17 @@ body {
   line-height: 40px;
   color: #273644;
 }
-
-.novedad .novedad--check {
+.aviso .aviso--check {
   height: 100%;
   width: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.novedad .novedad--check input[type=checkbox] + label i {
+.aviso .aviso--check input[type=checkbox] + label i {
   cursor: pointer;
 }
-
-.novedad .novedad--check input[type=checkbox] {
+.aviso .aviso--check input[type=checkbox] {
   visibility: hidden;
 }
 
@@ -66,7 +62,6 @@ header {
   top: 0;
   box-shadow: rgba(39, 54, 68, 0.09) 0px 2px 1px, rgba(39, 54, 68, 0.09) 0px 4px 2px, rgba(39, 54, 68, 0.09) 0px 8px 4px, rgba(39, 54, 68, 0.09) 0px 16px 8px, rgba(39, 54, 68, 0.09) 0px 32px 16px;
 }
-
 header .logo {
   height: 80px;
   width: 200px;
@@ -77,7 +72,6 @@ header .logo {
   font-size: 40px;
   font-family: "Cormorant Garamond", serif;
 }
-
 header .barra {
   width: 190px;
   height: 60px;
@@ -135,7 +129,6 @@ header .barra .favoritos {
 main {
   width: 100%;
 }
-
 main .imagenes-decorativas {
   height: 90vh;
   width: 100%;
@@ -145,7 +138,6 @@ main .imagenes-decorativas {
   justify-content: center;
   margin-top: 10px;
 }
-
 main .imagenes-decorativas .imagenes-decorativas--div {
   background-color: #f6f3ea;
   margin: 25px;
@@ -153,66 +145,56 @@ main .imagenes-decorativas .imagenes-decorativas--div {
   background-size: cover;
   position: relative;
 }
-
 main .imagenes-decorativas .imagenes-decorativas--div .imagen-texto {
   position: absolute;
   top: 0%;
   left: 0%;
   height: 100%;
   width: 100%;
-  transition: all .2s;
+  transition: all 0.2s;
   color: #f6f3ea;
   font-family: "Cormorant Garamond", serif;
   z-index: -1;
   background-color: #273644;
-  opacity: .7;
+  opacity: 0.7;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   cursor: pointer;
 }
-
 main .imagenes-decorativas .imagenes-decorativas--div .imagen-texto h2 {
   cursor: pointer;
 }
-
 main .imagenes-decorativas .imagenes-decorativas--div .imagen-texto .h2-1 {
   font-size: 40px;
 }
-
 main .imagenes-decorativas .imagenes-decorativas--div .imagen-texto .h2-2 {
   font-size: 25px;
 }
-
 main .imagenes-decorativas .imagenes-decorativas--div:hover .imagen-texto {
   z-index: 1;
 }
-
 main .imagenes-decorativas #imagen-1, main .imagenes-decorativas #imagen-2, main .imagenes-decorativas #imagen-3 {
   width: 100%;
   height: 100%;
   box-shadow: rgba(39, 54, 68, 0.25) 0px 54px 55px, rgba(39, 54, 68, 0.12) 0px -12px 30px, rgba(39, 54, 68, 0.12) 0px 4px 6px, rgba(39, 54, 68, 0.17) 0px 12px 13px, rgba(39, 54, 68, 0.09) 0px -3px 5px;
   background-position: center;
   background-size: cover;
-  transition: all .4s;
+  transition: all 0.4s;
 }
-
 main .imagenes-decorativas .imagen-1 {
   grid-column: 1/2;
   grid-row: 1/3;
 }
-
 main .imagenes-decorativas .imagen-2 {
   grid-column: 2/3;
   grid-row: 1/2;
 }
-
 main .imagenes-decorativas .imagen-3 {
   grid-column: 2/3;
   grid-row: 2/3;
 }
-
 main .conteiner-info {
   height: 100vh;
   width: 100%;
@@ -225,7 +207,6 @@ main .conteiner-info {
   background-position: center;
   z-index: 2;
 }
-
 main .conteiner-info .info {
   width: 50%;
   height: 100%;
@@ -233,11 +214,10 @@ main .conteiner-info .info {
   justify-content: center;
   align-items: center;
   padding: 0 50px 0 150px;
-  transition: all .5s;
+  transition: all 0.5s;
   background-color: #273644;
   filter: opacity(80%);
 }
-
 main .conteiner-info .info p {
   text-align: center;
   font-size: 30px;
@@ -255,25 +235,21 @@ main .conteiner-info .info p {
   border-top: 1px solid #273644;
   border-bottom: 1px solid #273644;
 }
-
 .consideraciones .consideracion {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .consideraciones .consideracion svg {
   flex-grow: 1;
   color: #34539e;
 }
-
 .consideraciones .consideracion .consideracion__texto h4 {
   font-family: "Gabriela", serif;
   font-size: 1.2rem;
   color: #273644;
 }
-
 .consideraciones .consideracion .consideracion__texto p {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.2rem;
@@ -287,7 +263,6 @@ main .conteiner-info .info p {
   align-items: center;
   flex-direction: column;
 }
-
 .nuevos .nuevos-titulo, .nuevos .ofertas-titulo, .ofertas .nuevos-titulo, .ofertas .ofertas-titulo {
   border-bottom: #273644 1px solid;
   color: #273644;
@@ -301,12 +276,10 @@ main .conteiner-info .info p {
   padding-left: 20px;
   height: 100px;
 }
-
 .nuevos .nuevos-titulo h2, .nuevos .ofertas-titulo h2, .ofertas .nuevos-titulo h2, .ofertas .ofertas-titulo h2 {
   font-size: 30px;
   font-family: "Cormorant Garamond", serif;
 }
-
 .nuevos .nuevos-titulo a, .nuevos .ofertas-titulo a, .ofertas .nuevos-titulo a, .ofertas .ofertas-titulo a {
   font-size: 15px;
   font-family: "Gabriela", serif;
@@ -320,20 +293,16 @@ main .conteiner-info .info p {
   align-items: center;
   justify-content: center;
 }
-
 .nuevos .nuevos-titulo a h4, .nuevos .ofertas-titulo a h4, .ofertas .nuevos-titulo a h4, .ofertas .ofertas-titulo a h4 {
   cursor: pointer;
   color: #273644;
 }
-
 .nuevos .nuevos-titulo a:hover, .nuevos .ofertas-titulo a:hover, .ofertas .nuevos-titulo a:hover, .ofertas .ofertas-titulo a:hover {
   background-color: #273644;
 }
-
 .nuevos .nuevos-titulo a:hover h4, .nuevos .ofertas-titulo a:hover h4, .ofertas .nuevos-titulo a:hover h4, .ofertas .ofertas-titulo a:hover h4 {
   color: #f6f3ea;
 }
-
 .nuevos .nuevos-productos, .nuevos .ofertas-productos, .ofertas .nuevos-productos, .ofertas .ofertas-productos {
   padding: 30px;
   display: flex;
@@ -342,7 +311,6 @@ main .conteiner-info .info p {
   justify-content: space-evenly;
   width: 100%;
 }
-
 .nuevos .nuevos-productos .producto, .nuevos .ofertas-productos .producto, .ofertas .nuevos-productos .producto, .ofertas .ofertas-productos .producto {
   height: 350px;
   width: 320px;
@@ -352,4 +320,67 @@ main .conteiner-info .info p {
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
+.slider {
+  padding: 40px 0;
+}
+.slider-container {
+  width: 80%;
+  max-width: 1200px;
+  margin-inline: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  align-items: center;
+  gap: 1rem;
+}
+.slider-container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.slider-container__arrow {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.slider-container__arrow:hover {
+  transform: scale(1.1);
+}
+.slider-container__body {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  gap: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  padding-inline: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: opacity 0.6s ease-in-out;
+}
+.slider-container__body.slider-container__body--show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.slider-container__picture img {
+  height: 200px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.slider-container__text-container {
+  max-width: 80ch;
+}
+.slider-container__text-container .nombre-cliente {
+  font-family: "Gabriela", serif;
+  font-size: 1.5rem;
+  color: #273644;
+}
+.slider-container__text-container .review {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+}
+
 /*# sourceMappingURL=inicio.css.map */

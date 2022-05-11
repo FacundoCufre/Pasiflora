@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="styles/inicio.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script defer src="js/galeria-inicio.js"></script>
+    <script defer src="js/inicio.js"></script>
 </head>
 
 
 <body>
 
-    <section class="novedad" id="novedad">
-        <div class="novedad--texto"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis at cupiditate omnis molestiae harum.</span></div>
-        <div class="novedad--check"><input type="checkbox" id="check1"/>
+    <section class="aviso" id="aviso">
+        <div class="aviso--texto"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis at cupiditate omnis molestiae harum.</span></div>
+        <div class="aviso--check"><input type="checkbox" id="check1"/>
             <label for="check1"><i class="fa-solid fa-xmark"></i></label></div>
     </section>
     <header>
@@ -134,8 +134,8 @@
 
         <div class="consideracion">
           <svg
-            width="50"
-            height="50"
+            width="47"
+            height="47"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -207,6 +207,108 @@
               unde.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section class="slider">
+        <div class="slider-container">
+          <button id="before">
+            <svg
+              class="slider-container__arrow"
+              width="35"
+              height="35"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 6L9 12L15 18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+
+          <div
+            class="slider-container__body slider-container__body--show"
+            data-id="1"
+          >
+            <figure class="slider-container__picture">
+              <!-- Sustituir imagen -->
+              <img
+                src="https://images.unsplash.com/photo-1542596768-5d1d21f1cf98?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                alt=""
+              />
+            </figure>
+
+            <div class="slider-container__text-container">
+              <h3 class="nombre-cliente">Nombre Cliente</h3>
+              <p class="review">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                cum ratione optio blanditiis tenetur nobis praesentium odit
+                aliquam vitae fugiat?
+              </p>
+            </div>
+          </div>
+
+          <div class="slider-container__body" data-id="2">
+            <figure class="slider-container__picture">
+              <!-- Sustituir imagen -->
+              <img
+                src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80"
+                alt=""
+              />
+            </figure>
+
+            <div class="slider-container__text-container">
+              <h3 class="nombre-cliente">Nombre Cliente</h3>
+              <p class="review">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                cum ratione optio blanditiis tenetur nobis praesentium odit
+                aliquam vitae fugiat?
+              </p>
+            </div>
+          </div>
+
+          <div class="slider-container__body" data-id="3">
+            <figure class="slider-container__picture">
+              <!-- Sustituir imagen -->
+              <img
+                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                alt=""
+              />
+            </figure>
+
+            <div class="slider-container__text-container">
+              <h3 class="nombre-cliente">Nombre Cliente</h3>
+              <p class="review">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                cum ratione optio blanditiis tenetur nobis praesentium odit
+                aliquam vitae fugiat?
+              </p>
+            </div>
+          </div>
+
+          <button id="after">
+            <svg
+              class="slider-container__arrow"
+              width="35"
+              height="35"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </section>
     </main>
