@@ -10,6 +10,31 @@ var num3 = 3
 
 let identificadorIntervaloDeTiempo;
 
+const reviewsList = document.querySelectorAll('.slider-container__body');
+const before = document.getElementById('before');
+const after = document.getElementById('after');
+let currentReview = 1;
+const numOfReviews = 3;
+
+document.addEventListener('DOMContentLoaded', () => {
+    repetir1()
+    repetir2()
+    repetir3()
+});
+
+before.addEventListener('click', () => {
+    currentReview--;
+    controlReviews();
+    resetInterval();
+});
+
+after.addEventListener('click', () => {
+    controlReviews();
+    currentReview++;
+    resetInterval();
+    
+});
+
 function repetir1() {
     imagen1.setAttribute("style", `background-image: url(${imagenesMuestra[0]})`)
     identificadorIntervaloDeTiempo = setInterval(mandarMensaje, 10000);
@@ -24,7 +49,6 @@ function mandarMensaje() {
         num1=0
     }
 }
-
 
 let identificadorIntervaloDeTiempo2;
 
@@ -43,7 +67,6 @@ function mandarMensaje2() {
     }
 }
 
-
 let identificadorIntervaloDeTiempo3;
 
 function repetir3() {
@@ -61,6 +84,38 @@ function mandarMensaje3() {
     }
 }
 
-repetir1()
-repetir2()
-repetir3()
+// Lógica Reviews Slider
+const controlReviews = () => {
+    if(currentReview > numOfReviews) {
+        currentReview = 1;
+    } else if (currentReview === 0) {
+        currentReview = 3;
+    }
+    showReview();
+}
+
+const showReview = () => {
+    reviewsList.forEach((review) => {
+        const dataId = parseInt(review.dataset.id);
+
+        (dataId !== currentReview) ? (
+            (review.classList.contains('slider-container__body--show')) && review.classList.remove('slider-container__body--show')
+        ) : (
+            review.classList.add('slider-container__body--show')
+        )
+    });
+}
+
+let interval = setInterval(() => {
+    controlReviews();
+    currentReview++;
+}, 2500);
+
+// Resetear el intervalo
+const resetInterval = () => {
+    clearInterval(interval);
+    interval = setInterval(() => {
+        controlReviews();
+        currentReview++;
+    }, 2500);
+}

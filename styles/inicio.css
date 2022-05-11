@@ -416,4 +416,74 @@ main .filtros .filtros-boton:hover {
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
+.slider {
+  padding: 40px 0;
+}
+
+.slider-container {
+  width: 80%;
+  max-width: 1200px;
+  margin-inline: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slider-container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.slider-container__arrow {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-container__arrow:hover {
+  transform: scale(1.1);
+}
+
+.slider-container__body {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  gap: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  padding-inline: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slider-container__body.slider-container__body--show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.slider-container__picture img {
+  height: 200px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.slider-container__text-container {
+  max-width: 80ch;
+}
+
+.slider-container__text-container .nombre-cliente {
+  font-family: "Gabriela", serif;
+  font-size: 1.5rem;
+  color: #273644;
+}
+
+.slider-container__text-container .review {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+}
 /*# sourceMappingURL=inicio.css.map */
