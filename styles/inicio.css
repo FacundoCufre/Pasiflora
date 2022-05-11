@@ -22,10 +22,11 @@ body {
   z-index: 3;
   display: flex;
   flex-direction: row;
-  opacity: 0.9;
+  opacity: .9;
   position: sticky;
   top: 0;
 }
+
 .novedad .novedad--texto {
   height: 100%;
   width: 75%;
@@ -34,6 +35,7 @@ body {
   line-height: 40px;
   color: #273644;
 }
+
 .novedad .novedad--check {
   height: 100%;
   width: 10%;
@@ -41,9 +43,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .novedad .novedad--check input[type=checkbox] + label i {
   cursor: pointer;
 }
+
 .novedad .novedad--check input[type=checkbox] {
   visibility: hidden;
 }
@@ -62,6 +66,7 @@ header {
   top: 0;
   box-shadow: rgba(39, 54, 68, 0.09) 0px 2px 1px, rgba(39, 54, 68, 0.09) 0px 4px 2px, rgba(39, 54, 68, 0.09) 0px 8px 4px, rgba(39, 54, 68, 0.09) 0px 16px 8px, rgba(39, 54, 68, 0.09) 0px 32px 16px;
 }
+
 header .logo {
   height: 80px;
   width: 200px;
@@ -72,6 +77,7 @@ header .logo {
   font-size: 40px;
   font-family: "Cormorant Garamond", serif;
 }
+
 header .barra {
   width: 200px;
   height: 60px;
@@ -81,6 +87,7 @@ header .barra {
   align-items: center;
   margin-right: 20px;
 }
+
 header .barra .busqueda {
   height: 40px;
   width: 40px;
@@ -88,15 +95,17 @@ header .barra .busqueda {
   border: 1px #f6f3ea solid;
   padding-top: 12px;
   padding-left: 12px;
-  transition: all 0.5s;
+  transition: all .5s;
   display: flex;
   flex-direction: row;
   color: #f6f3ea;
 }
+
 header .barra .busqueda:hover {
   width: 150px;
   border-radius: 10px;
 }
+
 header .barra .busqueda #busqueda {
   width: 100%;
   height: 100%;
@@ -107,16 +116,20 @@ header .barra .busqueda #busqueda {
   padding-bottom: 12px;
   color: #f6f3ea;
 }
+
 header .barra .busqueda #busqueda:hover {
   cursor: text;
 }
+
 header .barra .busqueda #busqueda:placeholder-shown {
   opacity: 0;
-  transition: all 0.3s;
+  transition: all .3s;
 }
+
 header .barra .busqueda:hover #busqueda:placeholder-shown {
-  opacity: 0.7;
+  opacity: .7;
 }
+
 header .barra .favoritos {
   height: 40px;
   width: 40px;
@@ -130,30 +143,34 @@ header .barra .favoritos {
   border-radius: 30px;
   margin-left: 10px;
   border: 1px #f6f3ea solid;
-  transition: all 0.5s;
+  transition: all .5s;
 }
+
 header .barra .favoritos span {
   position: absolute;
   opacity: 0;
-  transition: all 0.1s;
+  transition: all .1s;
 }
+
 header .barra .favoritos:hover {
   width: 150px;
   border-radius: 10px;
   justify-content: flex-start;
   padding-left: 12px;
 }
+
 header .barra .favoritos:hover span {
   width: 50px;
   margin-left: 5px;
   position: relative;
   opacity: 1;
-  transition: all 0.8s;
+  transition: all .8s;
 }
 
 main {
   width: 100%;
 }
+
 main .imagenes-decorativas {
   height: 90vh;
   width: 100%;
@@ -163,6 +180,7 @@ main .imagenes-decorativas {
   justify-content: center;
   margin-top: 10px;
 }
+
 main .imagenes-decorativas .imagenes-decorativas--div {
   background-color: #f6f3ea;
   margin: 25px;
@@ -170,56 +188,66 @@ main .imagenes-decorativas .imagenes-decorativas--div {
   background-size: cover;
   position: relative;
 }
+
 main .imagenes-decorativas .imagenes-decorativas--div .imagen-texto {
   position: absolute;
   top: 0%;
   left: 0%;
   height: 100%;
   width: 100%;
-  transition: all 0.2s;
+  transition: all .2s;
   color: #f6f3ea;
   font-family: "Cormorant Garamond", serif;
   z-index: -1;
   background-color: #273644;
-  opacity: 0.7;
+  opacity: .7;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   cursor: pointer;
 }
+
 main .imagenes-decorativas .imagenes-decorativas--div .imagen-texto h2 {
   cursor: pointer;
 }
+
 main .imagenes-decorativas .imagenes-decorativas--div .imagen-texto .h2-1 {
   font-size: 40px;
 }
+
 main .imagenes-decorativas .imagenes-decorativas--div .imagen-texto .h2-2 {
   font-size: 25px;
 }
+
 main .imagenes-decorativas .imagenes-decorativas--div:hover .imagen-texto {
   z-index: 1;
 }
+
 main .imagenes-decorativas #imagen-1, main .imagenes-decorativas #imagen-2, main .imagenes-decorativas #imagen-3 {
   width: 100%;
   height: 100%;
   box-shadow: rgba(39, 54, 68, 0.25) 0px 54px 55px, rgba(39, 54, 68, 0.12) 0px -12px 30px, rgba(39, 54, 68, 0.12) 0px 4px 6px, rgba(39, 54, 68, 0.17) 0px 12px 13px, rgba(39, 54, 68, 0.09) 0px -3px 5px;
   background-position: center;
   background-size: cover;
-  transition: all 0.4s;
+  transition: all .4s;
 }
+
 main .imagenes-decorativas .imagen-1 {
   grid-column: 1/2;
   grid-row: 1/3;
 }
+
 main .imagenes-decorativas .imagen-2 {
   grid-column: 2/3;
   grid-row: 1/2;
 }
+
 main .imagenes-decorativas .imagen-3 {
   grid-column: 2/3;
   grid-row: 2/3;
 }
+
 main .conteiner-info {
   height: 100vh;
   width: 100%;
@@ -232,6 +260,7 @@ main .conteiner-info {
   background-position: center;
   z-index: 2;
 }
+
 main .conteiner-info .info {
   width: 50%;
   height: 100%;
@@ -239,16 +268,18 @@ main .conteiner-info .info {
   justify-content: center;
   align-items: center;
   padding: 0 50px 0 150px;
-  transition: all 0.5s;
+  transition: all .5s;
   background-color: #273644;
   filter: opacity(80%);
 }
+
 main .conteiner-info .info p {
   text-align: center;
   font-size: 30px;
   color: #f6f3ea;
   font-family: "Gabriela", serif;
 }
+
 main .filtros {
   margin-top: 90px;
   height: 40px;
@@ -258,11 +289,12 @@ main .filtros {
   justify-content: space-evenly;
   padding: 0 150px 0 150px;
 }
+
 main .filtros .filtros-boton {
   height: 100%;
   width: 90px;
   border-bottom: #34539e 1px solid;
-  transition: all 0.2s;
+  transition: all .2s;
   color: #34539e;
   font-family: "Gabriela", serif;
   display: flex;
@@ -270,10 +302,45 @@ main .filtros .filtros-boton {
   flex-direction: column;
   padding-bottom: 10px;
 }
+
 main .filtros .filtros-boton:hover {
   padding-bottom: 0;
   border-bottom: #a1caf1 12px solid;
   color: #a1caf1;
+}
+
+.consideraciones {
+  width: 80%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.7rem;
+  padding: 1.5rem 0 2.5rem 0;
+  border-top: 1px solid #273644;
+  border-bottom: 1px solid #273644;
+}
+
+.consideraciones .consideracion {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.consideraciones .consideracion svg {
+  flex-grow: 1;
+  color: #34539e;
+}
+
+.consideraciones .consideracion .consideracion__texto h4 {
+  font-family: "Gabriela", serif;
+  font-size: 1.2rem;
+  color: #273644;
+}
+
+.consideraciones .consideracion .consideracion__texto p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
 }
 
 .nuevos, .ofertas {
@@ -284,6 +351,7 @@ main .filtros .filtros-boton:hover {
   align-items: center;
   flex-direction: column;
 }
+
 .nuevos .nuevos-titulo, .nuevos .ofertas-titulo, .ofertas .nuevos-titulo, .ofertas .ofertas-titulo {
   border-bottom: #273644 1px solid;
   color: #273644;
@@ -297,10 +365,12 @@ main .filtros .filtros-boton:hover {
   padding-left: 20px;
   height: 100px;
 }
+
 .nuevos .nuevos-titulo h2, .nuevos .ofertas-titulo h2, .ofertas .nuevos-titulo h2, .ofertas .ofertas-titulo h2 {
   font-size: 30px;
   font-family: "Cormorant Garamond", serif;
 }
+
 .nuevos .nuevos-titulo a, .nuevos .ofertas-titulo a, .ofertas .nuevos-titulo a, .ofertas .ofertas-titulo a {
   font-size: 15px;
   font-family: "Gabriela", serif;
@@ -314,16 +384,20 @@ main .filtros .filtros-boton:hover {
   align-items: center;
   justify-content: center;
 }
+
 .nuevos .nuevos-titulo a h4, .nuevos .ofertas-titulo a h4, .ofertas .nuevos-titulo a h4, .ofertas .ofertas-titulo a h4 {
   cursor: pointer;
   color: #273644;
 }
+
 .nuevos .nuevos-titulo a:hover, .nuevos .ofertas-titulo a:hover, .ofertas .nuevos-titulo a:hover, .ofertas .ofertas-titulo a:hover {
   background-color: #273644;
 }
+
 .nuevos .nuevos-titulo a:hover h4, .nuevos .ofertas-titulo a:hover h4, .ofertas .nuevos-titulo a:hover h4, .ofertas .ofertas-titulo a:hover h4 {
   color: #f6f3ea;
 }
+
 .nuevos .nuevos-productos, .nuevos .ofertas-productos, .ofertas .nuevos-productos, .ofertas .ofertas-productos {
   padding: 30px;
   display: flex;
@@ -332,6 +406,7 @@ main .filtros .filtros-boton:hover {
   justify-content: space-evenly;
   width: 100%;
 }
+
 .nuevos .nuevos-productos .producto, .nuevos .ofertas-productos .producto, .ofertas .nuevos-productos .producto, .ofertas .ofertas-productos .producto {
   height: 350px;
   width: 320px;
@@ -341,5 +416,4 @@ main .filtros .filtros-boton:hover {
   border-radius: 10px;
   margin-bottom: 20px;
 }
-
 /*# sourceMappingURL=inicio.css.map */
