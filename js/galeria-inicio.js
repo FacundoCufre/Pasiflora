@@ -10,57 +10,22 @@ var num3 = 3
 
 let identificadorIntervaloDeTiempo;
 
-function repetir1() {
+function repetir() {
     imagen1.setAttribute("style", `background-image: url(${imagenesMuestra[0]})`)
-    identificadorIntervaloDeTiempo = setInterval(mandarMensaje, 10000);
-}
-
-function mandarMensaje() {
-    imagen1.setAttribute("style", `background-image: url(${imagenesMuestra[num1]})`)
-    if(num1 <13){
-        num1++
-    }
-    else{
-        num1=0
-    }
-}
-
-
-let identificadorIntervaloDeTiempo2;
-
-function repetir2() {
     imagen2.setAttribute("style", `background-image: url(${imagenesMuestra[1]})`)
-    identificadorIntervaloDeTiempo = setInterval(mandarMensaje2, 10000);
-}
-
-function mandarMensaje2() {
-    imagen2.setAttribute("style", `background-image: url(${imagenesMuestra[num2]})`)
-    if(num2 <13){
-        num2++
-    }
-    else{
-        num2=0
-    }
-}
-
-
-let identificadorIntervaloDeTiempo3;
-
-function repetir3() {
     imagen3.setAttribute("style", `background-image: url(${imagenesMuestra[2]})`)
-    identificadorIntervaloDeTiempo = setInterval(mandarMensaje3, 10000);
+    identificadorIntervaloDeTiempo = setInterval(cambiarFondo, 10000);
 }
 
-function mandarMensaje3() {
+function cambiarFondo() {
+    imagen1.setAttribute("style", `background-image: url(${imagenesMuestra[num1]})`)
+    num1 < 13 ? num1++ : num1=0
+
+    imagen2.setAttribute("style", `background-image: url(${imagenesMuestra[num2]})`)
+    num2 < 13 ? num2++ : num2=0
+    
     imagen3.setAttribute("style", `background-image: url(${imagenesMuestra[num3]})`)
-    if(num3 <13){
-        num3++
-    }
-    else{
-        num3=0
-    }
+    num3 < 13 ? num3++ : num3=0
 }
 
-repetir1()
-repetir2()
-repetir3()
+repetir()
