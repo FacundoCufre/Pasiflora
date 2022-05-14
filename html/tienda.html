@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasiflora - Tienda</title>
+    <link rel="stylesheet" href="../styles/tienda.css">
+    <script defer src="../js/tienda.js"></script>
+    <script src="https://kit.fontawesome.com/e06c33a944.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"><span>PASIFLORA</span></div>
+        <nav class="barra">
+            <button class="tienda"><div></div><a href="../index.html">INICIO</a></button>
+            <button class="favoritos"><div></div><a href="./favoritos.html">FAVORITOS</a></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filtros">
+            <input type="radio" name="filtros" id="filtro-ofertas" checked></input>
+            <label for="filtro-ofertas"><em>OFERTAS</em></label>
+
+            <input type="radio" name="filtros" id="filtro-nuevos" checked></input>
+            <label for="filtro-nuevos"><em>NUEVOS</em></label>
+
+            <input type="radio" name="filtros" id="filtro-todos" checked></input>
+            <label for="filtro-todos">TODOS</label>
+
+            <input type="radio" name="filtros" id="filtro-collares"></input>
+            <label for="filtro-collares">COLLARES</label>
+
+            <input type="radio" name="filtros" id="filtro-pulseras"></input>
+            <label for="filtro-pulseras">PULSERAS</label>
+
+            <input type="radio" name="filtros" id="filtro-aretes"></input>
+            <label for="filtro-aretes">ARETES</label>
+
+            <input type="radio" name="filtros" id="filtro-tobilleras"></input>
+            <label for="filtro-tobilleras">TOBILLERAS</label>
+
+            <input type="radio" name="filtros" id="filtro-sets"></input>
+            <label for="filtro-sets">SETS</label>
+
+            <input type="radio" name="filtros" id="filtro-llaveros"></input>
+            <label for="filtro-llaveros">LLAVEROS</label>
+        </section>
+
+        <section class="conteiner">
+            <div class="producto" id="producto-1" style="background-image: url(../img/muestra13.jpeg);">
+                <div class="producto-info">
+                    <span class="nombre">nombre</span>
+                    <div class="producto-info-contenido">
+                        <span>$500</span>
+                        <button class="ampliar" onclick="ampliarProducto(1)"><span>VER PRODUCTO</span></button>
+                    </div>
+                </div>
+                <div class="producto-info-ampliado">
+                    <span class="nombre">nombre</span>
+                    <nav>
+                        <input type="radio" name="info" id="descripcion" checked></input>
+                        <label for="descripcion" onclick="mostrarInfo(1, `descripcion`, `detalles`, `cuidados`)">DESCRIPCION</label>
+
+                        <input type="radio" name="info" id="detalles"></input>
+                        <label for="detalles" onclick="mostrarInfo(1, `detalles`, `descripcion`, `cuidados`)">DETALLES</label>
+
+                        <input type="radio" name="info" id="cuidados"></input>
+                        <label for="cuidados" onclick="mostrarInfo(1, `cuidados`, `detalles`, `descripcion`)">CUIDADOS</label>
+                    </nav>
+                    <div class="descripcion-show" id="descripcion-texto-1"><p>aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaa</p></div>
+                    <div class="detalles-oculto" id="detalles-texto-1"><p>bbbbbbbbb bbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbb</p></div>
+                    <div class="cuidados-oculto" id="cuidados-texto-1"><p>cccccccccccc cccccccccccccccccccc cccccccccc</p></div>
+                    <span class="precio">$500</span>
+                </div>
+                <div class="imagen-1">
+
+                </div>
+                <div class="imagen-2">
+
+                </div>
+                <div class="imagen-3">
+
+                </div>
+                <div class="cerrar" onclick="achicarProducto(1)"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <div class="producto">
+                <div class="producto-info">
+                    <span class="nombre">collar</span>
+                    <div class="producto-info-contenido">
+                        <span>precio</span>
+                        <button class="favear"><span>VER PRODUCTO</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-info">
+                    <span class="nombre">collar</span>
+                    <div class="producto-info-contenido">
+                        <span>precio</span>
+                        <button class="favear"><span>VER PRODUCTO</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-info">
+                    <span class="nombre">collar</span>
+                    <div class="producto-info-contenido">
+                        <span>precio</span>
+                        <button class="favear"><span>VER PRODUCTO</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-info">
+                    <span class="nombre">collar</span>
+                    <div class="producto-info-contenido">
+                        <span>precio</span>
+                        <button class="favear"><span>VER PRODUCTO</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-info">
+                    <span class="nombre">collar</span>
+                    <div class="producto-info-contenido">
+                        <span>precio</span>
+                        <button class="favear"><span>VER PRODUCTO</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-info">
+                    <span class="nombre">collar</span>
+                    <div class="producto-info-contenido">
+                        <span>precio</span>
+                        <button class="favear"><span>VER PRODUCTO</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

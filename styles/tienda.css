@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabriela&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  background-color: #f6f3ea;
+}
+
+header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #273644;
+  margin-bottom: 2px;
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  box-shadow: rgba(39, 54, 68, 0.09) 0px 2px 1px, rgba(39, 54, 68, 0.09) 0px 4px 2px, rgba(39, 54, 68, 0.09) 0px 8px 4px, rgba(39, 54, 68, 0.09) 0px 16px 8px, rgba(39, 54, 68, 0.09) 0px 32px 16px;
+}
+header .logo {
+  height: 80px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+  color: #f6f3ea;
+  font-size: 40px;
+  font-family: "Cormorant Garamond", serif;
+}
+header .barra {
+  width: 190px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+header .barra .tienda, header .barra .favoritos {
+  height: 40px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cormorant Garamond", serif;
+  color: #f6f3ea;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+header .barra .tienda a, header .barra .favoritos a {
+  padding-bottom: 2px;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  color: #f6f3ea;
+  text-decoration: none;
+}
+header .barra .tienda div, header .barra .favoritos div {
+  height: 30px;
+  position: absolute;
+  width: 0;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+header .barra .tienda:hover div, header .barra .favoritos:hover div {
+  width: 100%;
+  border-bottom: 1px solid #f6f3ea;
+}
+header .barra .tienda:hover a, header .barra .favoritos:hover a {
+  letter-spacing: 2px;
+}
+header .barra .tienda {
+  width: 65px;
+}
+header .barra .favoritos {
+  width: 105px;
+  margin-left: 10px;
+  padding-left: 15px;
+}
+
+.filtros {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: flex-end;
+  padding-left: 30%;
+  padding-right: 30%;
+  font-family: "Cormorant Garamond", serif;
+}
+.filtros input {
+  visibility: hidden;
+}
+.filtros label {
+  background: none;
+  border: none;
+  height: 22px;
+  transition: all 0.2s;
+  padding-bottom: 2px;
+}
+.filtros label:hover {
+  border-bottom: 2px solid #273644;
+  padding-bottom: 0;
+}
+.filtros input[type=radio]:checked + label {
+  border-bottom: 4px solid #273644;
+}
+
+.conteiner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 20px;
+}
+.conteiner .producto {
+  height: 340px;
+  width: 280px;
+  margin: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  align-items: flex-end;
+  background-position: center;
+  background-size: cover;
+}
+.conteiner .producto .producto-info {
+  height: 40px;
+  width: 100%;
+  transition: all 0.4s;
+  background-color: #273644;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f6f3ea;
+  position: relative;
+}
+.conteiner .producto .producto-info .nombre {
+  width: 90%;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  text-align: center;
+}
+.conteiner .producto .producto-info .producto-info-contenido {
+  position: absolute;
+  transition: all 0.2s;
+  opacity: 0;
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.conteiner .producto .producto-info .producto-info-contenido span {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+}
+.conteiner .producto .producto-info .producto-info-contenido button {
+  font-size: 10px;
+  font-family: "Gabriela", serif;
+  height: 30px;
+  width: 100px;
+  background: none;
+  border: 1px solid #f6f3ea;
+  border-radius: 15px;
+  color: #f6f3ea;
+  text-decoration: none;
+}
+.conteiner .producto .producto-info .producto-info-contenido button:hover {
+  cursor: pointer;
+  background-color: #f6f3ea;
+  color: #273644;
+}
+.conteiner .producto .producto-info .producto-info-contenido button:hover span {
+  cursor: pointer;
+}
+.conteiner .producto:hover .nombre {
+  border-bottom: solid 1px #f6f3ea;
+}
+.conteiner .producto:hover .producto-info {
+  height: 120px;
+  opacity: 0.9;
+}
+.conteiner .producto:hover .producto-info-contenido {
+  opacity: 1;
+}
+.conteiner .producto .imagen-1, .conteiner .producto .imagen-2, .conteiner .producto .imagen-3, .conteiner .producto .producto-info-ampliado, .conteiner .producto .cerrar {
+  display: none;
+}
+.conteiner .producto-ampliado {
+  width: 980px;
+  height: 380px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.conteiner .producto-ampliado .producto-info {
+  display: none;
+}
+.conteiner .producto-ampliado .producto-info-ampliado {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 340px;
+  background-color: #273644;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.conteiner .producto-ampliado .producto-info-ampliado .nombre {
+  width: 80%;
+  color: #f6f3ea;
+  margin-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: #f6f3ea solid 1px;
+}
+.conteiner .producto-ampliado .producto-info-ampliado nav {
+  margin-top: 30px;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.conteiner .producto-ampliado .producto-info-ampliado nav input {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+.conteiner .producto-ampliado .producto-info-ampliado nav label {
+  height: 30px;
+  width: 90px;
+  padding-top: 6px;
+  border-bottom: 1px solid #f6f3ea;
+  transition: all 0.3s;
+  color: #f6f3ea;
+  font-size: 13px;
+  font-family: "Cormorant Garamond", serif;
+}
+.conteiner .producto-ampliado .producto-info-ampliado nav input[type=radio]:checked + label {
+  padding-top: 5px;
+  border-bottom: none;
+  border-top: 1px solid #f6f3ea;
+  border-left: 1px solid #f6f3ea;
+  border-right: 1px solid #f6f3ea;
+}
+.conteiner .producto-ampliado .producto-info-ampliado .descripcion-oculto, .conteiner .producto-ampliado .producto-info-ampliado .detalles-oculto, .conteiner .producto-ampliado .producto-info-ampliado .cuidados-oculto {
+  display: none;
+}
+.conteiner .producto-ampliado .producto-info-ampliado .descripcion-show, .conteiner .producto-ampliado .producto-info-ampliado .detalles-show, .conteiner .producto-ampliado .producto-info-ampliado .cuidados-show {
+  border-bottom: 1px solid #f6f3ea;
+  display: block;
+  height: 210px;
+  width: 270px;
+  top: 110px;
+  padding: 8px;
+}
+.conteiner .producto-ampliado .producto-info-ampliado .descripcion-show p, .conteiner .producto-ampliado .producto-info-ampliado .detalles-show p, .conteiner .producto-ampliado .producto-info-ampliado .cuidados-show p {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  color: #f6f3ea;
+}
+.conteiner .producto-ampliado .producto-info-ampliado .precio {
+  width: 80%;
+  color: #f6f3ea;
+  margin-top: 15px;
+  font-size: 25px;
+  font-family: "Cormorant Garamond", serif;
+}
+.conteiner .producto-ampliado .imagen-1, .conteiner .producto-ampliado .imagen-2, .conteiner .producto-ampliado .imagen-3 {
+  display: block;
+  height: 100%;
+  width: 220px;
+  background-image: url(../img/muestra3.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+.conteiner .producto-ampliado .cerrar {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f6f3ea;
+  top: 10px;
+  left: 10px;
+}
+.conteiner .producto-ampliado .cerrar:hover i {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=tienda.css.map */

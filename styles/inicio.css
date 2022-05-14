@@ -15,39 +15,6 @@ body {
   background-color: #f6f3ea;
 }
 
-.aviso {
-  height: 40px;
-  width: 100%;
-  background-color: #a1caf1;
-  z-index: 3;
-  display: flex;
-  flex-direction: row;
-  opacity: 0.9;
-  position: sticky;
-  top: 0;
-}
-.aviso .aviso--texto {
-  height: 100%;
-  width: 75%;
-  margin-left: 15%;
-  text-align: center;
-  line-height: 40px;
-  color: #273644;
-}
-.aviso .aviso--check {
-  height: 100%;
-  width: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.aviso .aviso--check input[type=checkbox] + label i {
-  cursor: pointer;
-}
-.aviso .aviso--check input[type=checkbox] {
-  visibility: hidden;
-}
-
 header {
   height: 70px;
   width: 100%;
@@ -123,7 +90,39 @@ header .barra .favoritos {
   width: 105px;
   margin-left: 10px;
   padding-left: 15px;
-  border-left: 1px solid #f6f3ea;
+}
+
+.aviso {
+  height: 40px;
+  width: 100%;
+  background-color: #a1caf1;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  opacity: 0.9;
+  position: sticky;
+  top: 0;
+}
+.aviso .aviso--texto {
+  height: 100%;
+  width: 75%;
+  margin-left: 15%;
+  text-align: center;
+  line-height: 40px;
+  color: #273644;
+}
+.aviso .aviso--check {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aviso .aviso--check input[type=checkbox] + label i {
+  cursor: pointer;
+}
+.aviso .aviso--check input[type=checkbox] {
+  visibility: hidden;
 }
 
 main {

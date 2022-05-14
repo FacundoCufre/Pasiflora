@@ -1,28 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
-
-$blanco: #f6f3ea;
-$azul: #34539e;
-$azulOscuro: #273644;
-$celeste: #a1caf1;
-
-$fuente1: 'Gabriela', serif;
-$fuente2: 'Cormorant Garamond', serif;
-
-html{
-    scroll-behavior: smooth;
-}
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    cursor: default;
-}
-
-body{
-    background-color: $blanco;
-}
+@import "scss-parciales/header";
 
 .aviso{
     height: 40px;
@@ -55,86 +31,6 @@ body{
         }
         input[type=checkbox]{
             visibility: hidden;
-        }
-    }
-}
-
-header{
-    height: 70px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: $azulOscuro;
-    margin-bottom: 2px;
-    z-index: 2;
-    position: sticky;
-    top: 0;
-    box-shadow: rgba(39, 54, 68, 0.09) 0px 2px 1px, rgba(39, 54, 68, 0.09) 0px 4px 2px, rgba(39, 54, 68, 0.09) 0px 8px 4px, rgba(39, 54, 68, 0.09) 0px 16px 8px, rgba(39, 54, 68, 0.09) 0px 32px 16px;
-    .logo{
-        height: 80px;
-        width: 200px;
-        display: flex;
-        align-items: center;
-        margin-left: 60px;
-        color: $blanco;
-        font-size: 40px;
-        font-family: $fuente2;
-    }
-    .barra{
-        width: 190px;
-        height: 60px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-right: 20px;
-        .tienda, .favoritos{
-            height: 40px;
-            font-size: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: $fuente2;
-            color: $blanco;
-                position: relative;
-            background: none;
-            border: none;
-            cursor: pointer;
-            a{
-                padding-bottom: 2px;
-                position: absolute;
-                transition: all .2s ease-in-out;
-                cursor: pointer;
-                color: $blanco;
-                text-decoration: none;
-            }
-
-            div{
-                height: 30px;
-                position: absolute;
-                width: 0;
-                transition: all .2s ease-in-out;
-                cursor: pointer;
-                
-            }
-            &:hover div{
-                width: 100%;
-                border-bottom: 1px solid $blanco;
-            }
-            &:hover a{
-                letter-spacing: 2px;
-            }
-        }
-        .tienda{
-            width: 65px;
-        }
-        .favoritos{
-            width: 105px;
-            margin-left: 10px;
-            padding-left: 15px;
-            border-left: 1px solid $blanco;
         }
     }
 }
