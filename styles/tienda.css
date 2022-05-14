@@ -34,9 +34,9 @@ header .logo {
   width: 200px;
   display: flex;
   align-items: center;
-  margin-left: 60px;
+  margin-left: 30px;
   color: #f6f3ea;
-  font-size: 40px;
+  font-size: 20px;
   font-family: "Cormorant Garamond", serif;
 }
 header .barra {
@@ -44,13 +44,12 @@ header .barra {
   height: 60px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  margin-right: 20px;
 }
 header .barra .tienda, header .barra .favoritos {
   height: 40px;
-  font-size: 16px;
+  font-size: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,14 +83,40 @@ header .barra .tienda:hover a, header .barra .favoritos:hover a {
   letter-spacing: 2px;
 }
 header .barra .tienda {
-  width: 65px;
+  width: 30px;
 }
 header .barra .favoritos {
-  width: 105px;
-  margin-left: 10px;
-  padding-left: 15px;
+  width: 45px;
 }
 
+@media screen and (min-width: 575px) {
+  header .logo {
+    margin-left: 40px;
+    font-size: 25px;
+  }
+  header .barra .tienda, header .barra .favoritos {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 800px) {
+  header .logo {
+    margin-left: 60px;
+    font-size: 40px;
+  }
+  header .barra {
+    margin-right: 20px;
+  }
+  header .barra .tienda, header .barra .favoritos {
+    font-size: 18px;
+  }
+  header .barra .tienda {
+    width: 65px;
+  }
+  header .barra .favoritos {
+    padding-left: 10px;
+    width: 105px;
+  }
+}
 .filtros {
   height: 70px;
   width: 100%;

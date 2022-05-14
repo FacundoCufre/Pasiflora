@@ -42,9 +42,9 @@ header{
         width: 200px;
         display: flex;
         align-items: center;
-        margin-left: 60px;
+        margin-left: 30px;
         color: $blanco;
-        font-size: 40px;
+        font-size: 20px;
         font-family: $fuente2;
     }
     .barra{
@@ -52,18 +52,17 @@ header{
         height: 60px;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        margin-right: 20px;
         .tienda, .favoritos{
             height: 40px;
-            font-size: 16px;
+            font-size: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: $fuente2;
             color: $blanco;
-                position: relative;
+            position: relative;
             background: none;
             border: none;
             cursor: pointer;
@@ -93,12 +92,47 @@ header{
             }
         }
         .tienda{
-            width: 65px;
+            width: 30px;
         }
         .favoritos{
-            width: 105px;
-            margin-left: 10px;
-            padding-left: 15px;
+            width: 45px;
         }
     }
 }
+
+@media screen and (min-width:575px)  {
+    header {
+        .logo{
+            margin-left: 40px;
+            font-size: 25px;
+        }
+        .barra{
+            .tienda, .favoritos{
+                font-size: 15px;
+            }
+        }
+    }
+    
+}  
+@media screen and (min-width:800px)  {
+    header {
+        .logo{
+            margin-left: 60px;
+            font-size: 40px;
+        }
+        .barra{
+            margin-right: 20px;
+            .tienda, .favoritos{
+                font-size: 18px;
+            }
+            .tienda{
+                width: 65px;
+            }
+            .favoritos{
+                padding-left: 10px;
+                width: 105px;
+            }
+        }
+    }
+    
+}  
