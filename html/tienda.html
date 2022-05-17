@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasiflora - Tienda</title>
     <link rel="stylesheet" href="../styles/tienda.css">
-    <script defer src="../js/tienda.js"></script>
+    <script defer src="../js/productos.js"></script>
     <script src="https://kit.fontawesome.com/e06c33a944.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="logo"><span>PASIFLORA</span></div>
         <nav class="barra">
-            <button class="tienda"><div></div><a href="../index.html">INICIO</a></button>
-            <button class="favoritos"><div></div><a href="./favoritos.html">FAVORITOS</a></button>
+            <button class="tienda"><a href="../index.html">INICIO</a></button>
         </nav>
     </header>
 
     <main>
         <section class="filtros">
-            <input type="radio" name="filtros" id="filtro-ofertas" checked></input>
+            <input type="radio" name="filtros" id="filtro-ofertas"></input>
             <label for="filtro-ofertas"><em>OFERTAS</em></label>
 
-            <input type="radio" name="filtros" id="filtro-nuevos" checked></input>
+            <input type="radio" name="filtros" id="filtro-nuevos"></input>
             <label for="filtro-nuevos"><em>NUEVOS</em></label>
 
             <input type="radio" name="filtros" id="filtro-todos" checked></input>
@@ -48,100 +47,54 @@
             <label for="filtro-llaveros">LLAVEROS</label>
         </section>
 
-        <section class="conteiner">
-            <div class="producto" id="producto-1" style="background-image: url(../img/muestra13.jpeg);">
+        <section class="conteiner" id="conteiner">
+
+            <div class="producto" id="producto-2" style="background-image: url(../img/muestra10.jpeg);">
                 <div class="producto-info">
                     <span class="nombre">nombre</span>
                     <div class="producto-info-contenido">
                         <span>$500</span>
-                        <button class="ampliar" onclick="ampliarProducto(1)"><span>VER PRODUCTO</span></button>
+                        <a href="#producto-2"><button class="ampliar" onclick="ampliarProducto2(2)"><span>VER PRODUCTO</span></button></a>
                     </div>
                 </div>
                 <div class="producto-info-ampliado">
                     <span class="nombre">nombre</span>
-                    <nav>
-                        <input type="radio" name="info" id="descripcion" checked></input>
-                        <label for="descripcion" onclick="mostrarInfo(1, `descripcion`, `detalles`, `cuidados`)">DESCRIPCION</label>
+                    <div class="detalles" id="detalles-2"></div>
+                    <div class="cuidados" id="cuidados-2"></div>
+                </div>
+                <div class="producto-imagenes">
+                    <div class="imagen-principal" id="imagen-principal-2" style="background-image: url(../img/muestra3.jpeg);"></div>
+                    <div class="imagenes-todas">
+                        <input type="radio" name="img-2" id="foto1-2" checked>
+                        <label for="foto1-2" style="background-image: url(../img/muestra3.jpeg);" onclick="cambiarImagen(2, `url(../img/muestra3.jpeg)`)"></label>
 
-                        <input type="radio" name="info" id="detalles"></input>
-                        <label for="detalles" onclick="mostrarInfo(1, `detalles`, `descripcion`, `cuidados`)">DETALLES</label>
+                        <input type="radio" name="img-2" id="foto2-2">
+                        <label for="foto2-2" style="background-image: url(../img/muestra4.jpeg);" onclick="cambiarImagen(2, `url(../img/muestra4.jpeg)`)"></label>
 
-                        <input type="radio" name="info" id="cuidados"></input>
-                        <label for="cuidados" onclick="mostrarInfo(1, `cuidados`, `detalles`, `descripcion`)">CUIDADOS</label>
-                    </nav>
-                    <div class="descripcion-show" id="descripcion-texto-1"><p>aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaa</p></div>
-                    <div class="detalles-oculto" id="detalles-texto-1"><p>bbbbbbbbb bbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbb</p></div>
-                    <div class="cuidados-oculto" id="cuidados-texto-1"><p>cccccccccccc cccccccccccccccccccc cccccccccc</p></div>
-                    <span class="precio">$500</span>
-                </div>
-                <div class="imagen-1">
+                        <input type="radio" name="img-2" id="foto3-2">
+                        <label for="foto3-2" style="background-image: url(../img/muestra5.jpeg);" onclick="cambiarImagen(2, `url(../img/muestra5.jpeg)`)"></label>
 
-                </div>
-                <div class="imagen-2">
-
-                </div>
-                <div class="imagen-3">
-
-                </div>
-                <div class="cerrar" onclick="achicarProducto(1)"><i class="fa-solid fa-xmark"></i></div>
-            </div>
-            <div class="producto">
-                <div class="producto-info">
-                    <span class="nombre">collar</span>
-                    <div class="producto-info-contenido">
-                        <span>precio</span>
-                        <button class="favear"><span>VER PRODUCTO</span></button>
+                        <input type="radio" name="img-2" id="foto4-2">
+                        <label for="foto4-2" style="background-image: url(../img/muestra6.jpeg);" onclick="cambiarImagen(2, `url(../img/muestra6.jpeg)`)"></label>
+                        
                     </div>
                 </div>
+                <a href="#producto-2"><div class="cerrar" onclick="achicarProducto2(2)"><i class="fa-solid fa-xmark"></i></div></a>
             </div>
-            <div class="producto">
-                <div class="producto-info">
-                    <span class="nombre">collar</span>
-                    <div class="producto-info-contenido">
-                        <span>precio</span>
-                        <button class="favear"><span>VER PRODUCTO</span></button>
-                    </div>
-                </div>
-            </div>
-            <div class="producto">
-                <div class="producto-info">
-                    <span class="nombre">collar</span>
-                    <div class="producto-info-contenido">
-                        <span>precio</span>
-                        <button class="favear"><span>VER PRODUCTO</span></button>
-                    </div>
-                </div>
-            </div>
-            <div class="producto">
-                <div class="producto-info">
-                    <span class="nombre">collar</span>
-                    <div class="producto-info-contenido">
-                        <span>precio</span>
-                        <button class="favear"><span>VER PRODUCTO</span></button>
-                    </div>
-                </div>
-            </div>
-            <div class="producto">
-                <div class="producto-info">
-                    <span class="nombre">collar</span>
-                    <div class="producto-info-contenido">
-                        <span>precio</span>
-                        <button class="favear"><span>VER PRODUCTO</span></button>
-                    </div>
-                </div>
-            </div>
-            <div class="producto">
-                <div class="producto-info">
-                    <span class="nombre">collar</span>
-                    <div class="producto-info-contenido">
-                        <span>precio</span>
-                        <button class="favear"><span>VER PRODUCTO</span></button>
-                    </div>
-                </div>
-            </div>
+        
         </section>
     </main>
-
+    <footer class="footer">
+        <div class="footer-container">
+          <!-- Modificar según lo indicado -->
+          <p>&copy; 2021 Todos los derechos reservados, Pasiflora</p>
+          <div class="social-icons">
+            <a class="social-link" href="https://es-la.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a class="social-link" href="https://twitter.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a class="social-link" href="https://www.instagram.com/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+    </footer>
 </body>
 
 </html>

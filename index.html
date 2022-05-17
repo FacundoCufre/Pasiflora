@@ -13,6 +13,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script defer src="js/inicio.js"></script>
+    <script defer src="js/productos.js"></script>
   </head>
 
   <body>
@@ -29,8 +30,7 @@
     <header>
       <div class="logo"><span>PASIFLORA</span></div>
       <nav class="barra">
-        <button class="tienda"><div></div><a href="/html/tienda.html">TIENDA</a></button>
-        <button class="favoritos"><div></div><a href="/html/favoritos.html">FAVORITOS</a></button>
+        <button class="tienda"><div></div><a href="html/tienda.html">TIENDA</a></button>
       </nav>
     </header>
     <main>
@@ -65,18 +65,18 @@
         </div>
       </section>
 
-      <section class="nuevos">
+      <section class="nuevos" id="nuevos">
         <div class="nuevos-titulo">
           <h2>NOVEDADES</h2>
-          <a href="#"><h4>Ver más</h4></a>
+          <a href="html/tienda.html"><h4>Ver tienda</h4></a>
         </div>
         <div class="nuevos-productos" id="conteiner-nuevos-productos"></div>
       </section>
 
-      <section class="ofertas">
+      <section class="ofertas" id="ofertas">
         <div class="ofertas-titulo">
           <h2>OFERTAS</h2>
-          <a href="/html/tienda.html"><h4>Ver más</h4></a>
+          <a href="html/tienda.html"><h4>Ver tienda</h4></a>
         </div>
         <div class="ofertas-productos" id="conteiner-ofertas-productos">
           <div class="producto"></div>
@@ -228,24 +228,9 @@
         <!-- Modificar según lo indicado -->
         <p>&copy; 2021 Todos los derechos reservados, Pasiflora</p>
         <div class="social-icons">
-          <a
-            class="social-link"
-            href="https://es-la.facebook.com/"
-            target="_blank"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            class="social-link"
-            href="https://twitter.com/?lang=es"
-            target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a
-            class="social-link"
-            href="https://www.instagram.com/?hl=es"
-            target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
+          <a class="social-link" href="https://es-la.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a class="social-link" href="https://twitter.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a class="social-link" href="https://www.instagram.com/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </footer>

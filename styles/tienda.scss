@@ -1,11 +1,13 @@
 @import "scss-parciales/header";
 
+
+
 .filtros{
     height: 70px;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     justify-items: center;
     align-items: flex-end;
     padding-left: 30%;
@@ -20,6 +22,7 @@
         height: 22px;
         transition: all .2s;
         padding-bottom: 2px;
+        font-size: 16px;
         &:hover{
             border-bottom: 2px solid $azulOscuro;
             padding-bottom: 0;
@@ -31,6 +34,8 @@
     }
 }
 
+
+
 .conteiner{
     width: 100%;
     display: flex;
@@ -41,185 +46,47 @@
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 20px;
-    .producto{
-        height: 340px;
-        width: 280px;
-        margin: 20px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        display: flex;
-        align-items: flex-end;
-        background-position: center;
-        background-size: cover;
-        .producto-info{
-            height: 40px;
-            width: 100%;
-            transition: all .4s;
-            background-color: $azulOscuro;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: $blanco;
-            position: relative;
-            .nombre{
-                width: 90%;
-                height: 20px;
-                position: absolute;
-                top: 10px;
-                text-align: center;
-            }
-            .producto-info-contenido{
-                position: absolute;
-                transition: all .2s;
-                opacity: 0;
-                height: 100px;
-                width: 100%;
-                bottom: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                span{
-                    height: 30px;
-                    width: 100%;
-                    text-align: center;
-                }
-                button{
-                    font-size: 10px;
-                    font-family: $fuente1;
-                    height: 30px;
-                    width: 100px;
-                    background: none;
-                    border: 1px solid $blanco;
-                    border-radius: 15px;
-                    color: $blanco;
-                    text-decoration: none;
-                    &:hover{
-                        cursor: pointer;
-                        background-color: $blanco;
-                        color: $azulOscuro;
-                        span{
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-        }
-        &:hover .nombre{
-            border-bottom: solid 1px $blanco;
-        }
-        &:hover .producto-info{
-            height: 120px;
-            opacity: .9;
-        }
-        &:hover .producto-info-contenido{
-            opacity: 1;    
-        }
-        .imagen-1, .imagen-2, .imagen-3, .producto-info-ampliado, .cerrar{
-            display: none;
+    @import "scss-parciales/productos";
+}
+
+
+
+@import "scss-parciales/footer";
+
+@media screen and(max-width: 750px) {
+    .filtros{
+        padding-left: 15%;
+        padding-right: 15%;
+        flex-wrap: wrap;
+        height: 100px;
+        label{
+            font-size: 14px;
+            margin: 10px;
         }
     }
-    .producto-ampliado{
-        width: 980px;
-        height: 380px;
-        display: flex;
-        flex-direction: row;
-        position: relative;
-        .producto-info{
-            display: none;
+}
+@media screen and(max-width: 750px) {
+    .filtros{
+        padding-left: 15%;
+        padding-right: 15%;
+        flex-wrap: wrap;
+        height: 100px;
+        label{
+            font-size: 14px;
+            margin: 10px;
         }
-        .producto-info-ampliado{
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            width: 340px;
-            background-color: $azulOscuro;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-            .nombre{
-                width: 80%;
-                color: $blanco;
-                margin-top: 20px;
-                padding-bottom: 5px;
-                border-bottom: $blanco solid 1px;
-            }
-            nav{
-                margin-top: 30px;
-                height: 30px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: row;
-                input{ 
-                    visibility: hidden;
-                    position: absolute;
-                    top:0
-                }
-                label{
-                    height: 30px;
-                    width: 90px;
-                    padding-top: 6px;
-                    border-bottom: 1px solid $blanco;
-                    transition: all .3s;
-                    color: $blanco;
-                    font-size: 13px;
-                    font-family: $fuente2;
-                }
-                input[type=radio]:checked + label{
-                    padding-top: 5px;
-                    border-bottom: none;
-                    border-top: 1px solid $blanco;
-                    border-left: 1px solid $blanco;
-                    border-right: 1px solid $blanco;
-                }
-            }
-            .descripcion-oculto, .detalles-oculto, .cuidados-oculto{
-                display: none;
-            }
-            .descripcion-show, .detalles-show, .cuidados-show{
-                border-bottom: 1px solid $blanco;
-                display: block;
-                height: 210px;
-                width: 270px;
-                top: 110px;
-                padding: 8px;
-                p{
-                    width: 100%;
-                    text-align: center;
-                    font-size: 15px;
-                    color: $blanco;
-
-                }
-            }
-            .precio{
-                width: 80%;
-                color: $blanco;
-                margin-top: 15px;
-                font-size: 25px;
-                font-family: $fuente2;
-            }
-        }
-        .imagen-1, .imagen-2, .imagen-3{
-            display: block;
-            height: 100%;
-            width: 220px;
-            background-image: url(../img/muestra3.jpeg);
-            background-position: center;
-            background-size: cover;
-        }
-        .cerrar{
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: $blanco;
-            top: 10px;
-            left: 10px;
-            &:hover i{
-                cursor: pointer;
-            }
+    }
+}
+@media screen and(max-width: 632px) {
+    .filtros{
+        flex-wrap: wrap;
+        height: 180px;
+        flex-direction: column;
+        align-items: center;
+        label{
+            font-size: 14px;
+            max-width: 90px;
+            margin: 0;
         }
     }
 }

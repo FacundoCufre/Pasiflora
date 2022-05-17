@@ -48,15 +48,16 @@ header{
         font-family: $fuente2;
     }
     .barra{
-        width: 190px;
+        width: 100px;
         height: 60px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        .tienda, .favoritos{
+        .tienda{
+            width: 80px;
             height: 40px;
-            font-size: 10px;
+            font-size: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -91,12 +92,6 @@ header{
                 letter-spacing: 2px;
             }
         }
-        .tienda{
-            width: 30px;
-        }
-        .favoritos{
-            width: 45px;
-        }
     }
 }
 
@@ -107,7 +102,7 @@ header{
             font-size: 25px;
         }
         .barra{
-            .tienda, .favoritos{
+            .tienda{
                 font-size: 15px;
             }
         }
@@ -122,15 +117,11 @@ header{
         }
         .barra{
             margin-right: 20px;
-            .tienda, .favoritos{
+            .tienda{
                 font-size: 18px;
             }
             .tienda{
                 width: 65px;
-            }
-            .favoritos{
-                padding-left: 10px;
-                width: 105px;
             }
         }
     }

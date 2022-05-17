@@ -49,6 +49,8 @@ main{
             grid-template-rows: 250px 250px 250px;
             justify-content: center;
             margin-top: 10px;
+            background-position: center;
+            background-size: cover;
         }
         .imagen-1{
             grid-column: 1/2;
@@ -68,6 +70,7 @@ main{
         margin: 25px;
         background-position: center;
         background-size: cover;
+        background-repeat: no-repeat;
         position: relative;
         .imagen-texto{
             position: absolute;
@@ -144,6 +147,7 @@ main{
         justify-items: center;
         align-items: center;
         flex-direction: column;
+        margin-top: 40px;
         .nuevos-titulo, .ofertas-titulo{
             border-bottom: $azulOscuro 1px solid;
             color: $azulOscuro;
@@ -415,7 +419,7 @@ main{
                 a{
                     font-size: 15px;
                     height: 30px;
-                    width: 70px;
+                    width: 80px;
                 }
             }
         }
@@ -440,8 +444,15 @@ main{
         }
         .slider{
             &-container{
+                grid-template-columns: 30px 2fr 30px;
                 &__body{
                     flex-direction: row;
+                }
+            }
+            .slider-container__picture {
+        
+                img {
+                    height: 150px;
                 }
             }
         }
