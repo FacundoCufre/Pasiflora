@@ -1,5 +1,5 @@
 import { fetchProducts } from "./firebase.js";
-import { ampliarProducto2, cambiarImagen } from "./productos.js";
+import { ampliarProducto2, cambiarImagen, achicarProducto2 } from "./productos.js";
 
 const contenedorProductos = document.getElementById('conteiner');
 const templateProducto = document.getElementById('template-card-producto').content;
@@ -65,7 +65,7 @@ const renderProducts = () => {
         // clone.querySelector('.producto').style.backgroundImage = `url(${imagen})`;
         clone.querySelectorAll('.nombre').forEach((nombreProducto) => nombreProducto.textContent = `${nombre}`);
         clone.querySelector('.producto-info-contenido span').textContent = `PEN ${precio}`;
-        clone.querySelector('.producto-info-contenido a').href = `#producto-${id}`;
+        clone.querySelectorAll('a').forEach((link) => link.href = `#producto-${id}`);
         clone.querySelector('.ampliar').addEventListener('click', () => {
             ampliarProducto2(id);
         });
@@ -105,6 +105,10 @@ const renderProducts = () => {
         clone.getElementById('foto4-2').style.backgroundImage = `url(${fotos.foto4})`;
         clone.getElementById('foto4-2').addEventListener('click', () => {
             cambiarImagen(id, `url(${fotos.foto4})`);
+        });
+
+        clone.querySelector('.cerrar').addEventListener('click', () => {
+            achicarProducto2(id);
         });
 
         fragment.appendChild(clone);
