@@ -1,9 +1,9 @@
-function ampliarProducto2(x){
+function ampliarProducto(x){
     const producto = document.getElementById(`producto-${x}`)
     producto.setAttribute("class", "producto producto-ampliado")
 }
 
-function achicarProducto2(x){
+function achicarProducto(x){
     const producto = document.getElementById(`producto-${x}`)
     producto.setAttribute("class", "producto")
 }
