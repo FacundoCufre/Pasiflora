@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasiflora - Tienda</title>
     <link rel="stylesheet" href="../styles/tienda.css">
-    <script defer src="../js/productos.js"></script>
+    <script defer type="module" src="../js/productos.js"></script>
+    <script defer type="module" src="../js/renderProductos.js"></script>
     <script src="https://kit.fontawesome.com/e06c33a944.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -49,38 +50,42 @@
 
         <section class="conteiner" id="conteiner">
 
-            <div class="producto" id="producto-2" style="background-image: url(../img/muestra10.jpeg);">
-                <div class="producto-info">
-                    <span class="nombre">nombre</span>
-                    <div class="producto-info-contenido">
-                        <span>$500</span>
-                        <a href="#producto-2"><button class="ampliar" onclick="ampliarProducto2(2)"><span>VER PRODUCTO</span></button></a>
+            <template id="template-card-producto">
+                <div class="producto" id="producto-2" style="background-image: url(../img/muestra10.jpeg);">
+                    <div class="producto-info">
+                        <span class="nombre">nombre</span>
+                        <div class="producto-info-contenido">
+                            <span>$500</span>
+                            <a href="#producto"><button class="ampliar"><span>VER PRODUCTO</span></button></a>
+                        </div>
                     </div>
-                </div>
-                <div class="producto-info-ampliado">
-                    <span class="nombre">nombre</span>
-                    <div class="detalles" id="detalles-2"></div>
-                    <div class="cuidados" id="cuidados-2"></div>
-                </div>
-                <div class="producto-imagenes">
-                    <div class="imagen-principal" id="imagen-principal-2" style="background-image: url(../img/muestra3.jpeg);"></div>
-                    <div class="imagenes-todas">
-                        <input type="radio" name="img-2" id="foto1-2" checked>
-                        <label for="foto1-2" style="background-image: url(../img/muestra3.jpeg);" onclick="cambiarImagen(2, `url(../img/muestra3.jpeg)`)"></label>
-
-                        <input type="radio" name="img-2" id="foto2-2">
-                        <label for="foto2-2" style="background-image: url(../img/muestra4.jpeg);" onclick="cambiarImagen(2, `url(../img/muestra4.jpeg)`)"></label>
-
-                        <input type="radio" name="img-2" id="foto3-2">
-                        <label for="foto3-2" style="background-image: url(../img/muestra5.jpeg);" onclick="cambiarImagen(2, `url(../img/muestra5.jpeg)`)"></label>
-
-                        <input type="radio" name="img-2" id="foto4-2">
-                        <label for="foto4-2" style="background-image: url(../img/muestra6.jpeg);" onclick="cambiarImagen(2, `url(../img/muestra6.jpeg)`)"></label>
-                        
+                    <div class="producto-info-ampliado">
+                        <span class="nombre">nombre</span>
+                        <div class="detalles" id="detalles-2"></div>
+                        <div class="cuidados" id="cuidados-2"></div>
                     </div>
-                </div>
-                <a href="#producto-2"><div class="cerrar" onclick="achicarProducto2(2)"><i class="fa-solid fa-xmark"></i></div></a>
-            </div>
+                    <div class="producto-imagenes">
+                        <div class="imagen-principal" style="background-image: url(../img/muestra3.jpeg);"></div>
+                        <div class="imagenes-todas">
+                            <input type="radio" name="img-2" id="foto1" checked>
+                            <label id="foto1" for="foto1" style="background-image: url(../img/muestra3.jpeg);"></label>
+                            
+                            <input type="radio" name="img-2" id="foto2">
+                            <label id="foto2" for="foto2" style="background-image: url(../img/muestra4.jpeg);"></label>
+                            
+                            <input type="radio" name="img-2" id="foto3">
+                            <label id="foto3" for="foto3" style="background-image: url(../img/muestra5.jpeg);"></label>
+                            
+                            <input type="radio" name="img-2" id="foto4">
+                            <label id="foto4" for="foto4" style="background-image: url(../img/muestra6.jpeg);"></label>
+                
+                        </div>
+                    </div>
+                    <a href="#producto"><div class="cerrar"><i class="fa-solid fa-xmark"></i></div></a>
+                </div>   
+            </template>
+
+            
         
         </section>
     </main>
