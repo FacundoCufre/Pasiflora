@@ -36,7 +36,7 @@ const renderProducts = () => {
             material,
             medidas,
             nombre,
-            precio
+            precio,
         } = product;
 
         const {foto1, foto2, foto3, foto4} = fotos;
@@ -71,6 +71,11 @@ const renderProducts = () => {
         clone.querySelector('.ampliar').addEventListener('click', () => {
             ampliarProducto2(id);
         });
+
+        if(product.hasOwnProperty('colores')) {
+            clone.querySelector('.colores-disponibles').textContent = `Disponible: ${product.colores.join(', ')}`;
+        }
+
         clone.querySelector('.detalles').innerHTML = `
             <p>Material: ${material}</p>
             <p>Medidas:</p>
