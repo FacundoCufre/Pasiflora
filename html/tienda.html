@@ -9,6 +9,7 @@
     <script defer type="module" src="../js/productos.js"></script>
     <script defer type="module" src="../js/renderProductos.js"></script>
     <script src="https://kit.fontawesome.com/e06c33a944.js" crossorigin="anonymous"></script>
+    <script defer src="../js/menu.js"></script>
 </head>
 <body>
     <header>
@@ -16,9 +17,12 @@
         <nav class="barra">
             <button class="tienda"><a href="../index.html">INICIO</a></button>
         </nav>
+        
     </header>
 
     <main>
+        <input type="button" value="off" id="onoff" onclick="onoff();">
+        <label for="onoff" class="menu" id="menu"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-caret-down"></i></label>
         <section class="filtros">
             <input type="radio" name="filtros" id="filtro-ofertas"></input>
             <label for="filtro-ofertas"><em>OFERTAS</em></label>
@@ -61,24 +65,23 @@
                     </div>
                     <div class="producto-info-ampliado">
                         <span class="nombre">nombre</span>
-                        <div class="detalles" id="detalles-2"></div>
-                        <div class="cuidados" id="cuidados-2"></div>
+                        <div class="descripcion">
+                            <input type="radio" id="detalle" checked></input>
+                            <label for="detalle" id="detallelabel"><span>DETALLES</span></label>
+
+                            <input type="radio" id="cuidado"></input>
+                            <label for="cuidado" id="cuidadolabel"><span>CUIDADOS</span></label>
+                        </div>
+                        <div class="detalles"></div>
+                        <div class="cuidados"></div>
+                        <div class="fade"></div>
                     </div>
+                    
+
                     <div class="producto-imagenes">
                         <div class="imagen-principal" style="background-image: url(../img/muestra3.jpeg);"></div>
                         <div class="imagenes-todas">
-                            <input type="radio" name="img-2" id="foto1" checked>
-                            <label id="foto1" for="foto1" style="background-image: url(../img/muestra3.jpeg);"></label>
                             
-                            <input type="radio" name="img-2" id="foto2">
-                            <label id="foto2" for="foto2" style="background-image: url(../img/muestra4.jpeg);"></label>
-                            
-                            <input type="radio" name="img-2" id="foto3">
-                            <label id="foto3" for="foto3" style="background-image: url(../img/muestra5.jpeg);"></label>
-                            
-                            <input type="radio" name="img-2" id="foto4">
-                            <label id="foto4" for="foto4" style="background-image: url(../img/muestra6.jpeg);"></label>
-                
                         </div>
                     </div>
                     <a href="#producto"><div class="cerrar"><i class="fa-solid fa-xmark"></i></div></a>

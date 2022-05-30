@@ -1,6 +1,21 @@
 @import "scss-parciales/header";
 
+main{
+    height: auto;
+}
 
+.menu{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    .fa-caret-down{
+        margin-left: 3px;
+        transition: all .2s;
+    }
+}
+#onoff{
+    display: none;
+}
 
 .filtros{
     height: 70px;
@@ -13,6 +28,8 @@
     padding-left: 30%;
     padding-right: 30%;
     font-family: $fuente2;
+    transform: translateX(0%);
+    transform: translateY(0%);
     input{
         visibility: hidden;
     }
@@ -31,6 +48,10 @@
     }
     input[type=radio]:checked + label{
         border-bottom: 4px solid $azulOscuro;
+    }
+    .open--filtros{
+        transform: translateX(0%);
+        transform: translateY(0%);
     }
 }
 
@@ -53,40 +74,85 @@
 
 @import "scss-parciales/footer";
 
-@media screen and(max-width: 750px) {
-    .filtros{
-        padding-left: 15%;
-        padding-right: 15%;
-        flex-wrap: wrap;
-        height: 100px;
-        label{
-            font-size: 14px;
-            margin: 10px;
+@media screen and (max-width: 750px) {
+    .menu{
+        display: flex;
+        top: 80px;
+        height: 20px;
+        width: 20px;
+        color: $azulOscuro;
+        font-size: 12px;
+        border: none;
+        background: none;
+        transition: all .2s;
+        position: absolute;
+        z-index: 1;
+        left: 30px;
+        .fa-caret-down{
+            transform: rotateZ(270deg);
+        }
+        .open{
+            transform: rotateZ(90deg);
         }
     }
-}
-@media screen and(max-width: 750px) {
-    .filtros{
-        padding-left: 15%;
-        padding-right: 15%;
-        flex-wrap: wrap;
-        height: 100px;
-        label{
-            font-size: 14px;
-            margin: 10px;
-        }
+    .open--menu{
+        left: 130px;
     }
-}
-@media screen and(max-width: 632px) {
+    .conteiner{
+        margin:0;
+        padding-left: 10%;
+    }
+    main{
+        min-height: calc(100vh - 70px);
+    }
     .filtros{
-        flex-wrap: wrap;
-        height: 180px;
+        position: absolute;
+        height: calc(100vh - 70px);
+        width: 120px;
+        display: flex;
         flex-direction: column;
+        transition: all .2s;
+        background-color: $azulOscuro;
+        z-index: 1;
+        padding: 0;
+        margin: 0;
+        justify-content: flex-start;
         align-items: center;
+        color: $blanco;
+        transform: translateX(-100%);
+        top: 70px;
+        label{
+            font-size: 14px;
+            margin: 5px;
+            &:hover{
+                border-bottom: 2px solid $celeste;
+            }
+        }
+        input[type=radio]:checked + label{
+            border-bottom: 4px solid $celeste;
+        }
+    }
+    .open--filtros{
+        transform: translateX(0%);
+    }
+}
+@media screen and (max-width: 500px) {
+    .filtros{
+        height: calc(100vh - 70px);
+        width: 100vw;
+        background-color: $azulOscuro;
+        justify-content: center;
         label{
             font-size: 14px;
             max-width: 90px;
             margin: 0;
         }
+    }
+    .menu{
+        top: 24px;
+        left: calc(100% - 110px);
+        font-size: 12px;
+        z-index: 4;
+        color: $blanco;
     }
 }

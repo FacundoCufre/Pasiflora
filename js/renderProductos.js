@@ -1,5 +1,5 @@
 import { fetchProducts } from "./firebase.js";
-import { ampliarProducto, cambiarImagen, achicarProducto } from "./productos.js";
+import { ampliarProducto, cambiarImagen, achicarProducto, cambiarDescripcion } from "./productos.js";
 
 const contenedorProductos = document.getElementById('conteiner');
 const templateProducto = document.getElementById('template-card-producto').content;
@@ -55,7 +55,7 @@ const renderProducts = () => {
 
         cuidados.forEach((cuidado) => {
             cuidadosText += `
-                <li>${cuidado}</li>
+                <li><span>♢  </span>${cuidado}</li>
             `;
         });
 
@@ -69,44 +69,80 @@ const renderProducts = () => {
         clone.querySelector('.ampliar').addEventListener('click', () => {
             ampliarProducto(id);
         });
-        clone.querySelector('.detalles').innerHTML = `
-            <p>Material: ${material}</p>
-            <p>Medidas:</p>
-            <ul>
-                ${medidasText}
-            </ul>   
+        clone.querySelector('.descripcion')
+        clone.querySelector("#detalle").id = `detalle-${id}` 
+        clone.querySelector("#cuidado").id = `cuidado-${id}`
+        clone.getElementById(`detalle-${id}`).name = `desc-${id}`;
+        clone.getElementById(`cuidado-${id}`).name = `desc-${id}`;
+
+        clone.getElementById("detallelabel").id = `detallelabel-${id}`
+        clone.getElementById(`detallelabel-${id}`).addEventListener(`click`, ()=>{
+            cambiarDescripcion(`#detalles-${id}`,`#cuidados-${id}`)
+        });
+        clone.getElementById(`detallelabel-${id}`).for = `detalle-${id}` 
+
+        clone.getElementById("cuidadolabel").id = `cuidadolabel-${id}`
+        clone.getElementById(`cuidadolabel-${id}`).addEventListener(`click`, ()=>{
+            cambiarDescripcion(`#cuidados-${id}`,`#detalles-${id}`)
+        });
+        clone.getElementById(`cuidadolabel-${id}`).for = `cuidado-${id}`
+
+        clone.querySelector('.detalles').id = `detalles-${id}`
+        clone.querySelector(`#detalles-${id}`).innerHTML = `
+            <div>
+                <span>Material:</span>
+                <p>${material}</p>
+            </div>
+            <div>
+                <span>Medidas:</span>
+                <ul>
+                    ${medidasText}
+                </ul>
+            </div>
         `;
-        clone.querySelector('.cuidados').innerHTML = `
+
+        clone.querySelector('.cuidados').id = `cuidados-${id}`
+        clone.querySelector(`#cuidados-${id}`).innerHTML = `
             <ul>
                 ${cuidadosText}
             </ul>
         `;
+
+        clone.querySelector(`.fade`)
+
         clone.querySelector('.imagen-principal').id = `imagen-principal-${id}`;
-        clone.querySelector('.imagen-principal').style.backgroundImage = `url(${fotos.fotoPrincipal})`;
+        clone.querySelector(`#imagen-principal-${id}`).style.backgroundImage = `url(${fotos.fotoPrincipal})`;
         
-        clone.querySelectorAll('input').forEach((input) => input.name = `img-${id}`);
-        
-        clone.getElementById('foto1').style.backgroundImage = `url(${fotos.fotoPrincipal})`;
-        clone.getElementById('foto1').addEventListener('click', () => {
+        clone.querySelector(".imagenes-todas").innerHTML = `
+                            <input type="radio" id='foto1-${id}' name='img-${id}' checked>
+                            <label id='fotolabel1-${id}' for='foto1-${id}' style="background-image: url(${fotos.fotoPrincipal});"></label>
+
+                            <input type="radio" id='foto2-${id}' name='img-${id}'>
+                            <label id='fotolabel2-${id}' for='foto2-${id}' style="background-image: url(${fotos.foto2});"></label>
+
+                            <input type="radio" id='foto3-${id}' name='img-${id}'>
+                            <label id='fotolabel3-${id}' for='foto3-${id}' style="background-image: url(${fotos.foto3});"></label>
+
+                            <input type="radio" id='foto4-${id}' name='img-${id}'>
+                            <label id='fotolabel4-${id}' for='foto4-${id}' style="background-image: url(${fotos.foto4});"></label>
+        `
+
+        clone.getElementById(`fotolabel1-${id}`).addEventListener('click', () => {
             cambiarImagen(id, `url(${fotos.fotoPrincipal})`);
         });
 
-
-        clone.getElementById('foto2').style.backgroundImage = `url(${fotos.foto2})`;
-        clone.getElementById('foto2').addEventListener('click', () => {
+        clone.getElementById(`fotolabel2-${id}`).addEventListener('click', () => {
             cambiarImagen(id, `url(${fotos.foto2})`);
         });
 
-        clone.getElementById('foto3').style.backgroundImage = `url(${fotos.foto3})`;
-        clone.getElementById('foto3').addEventListener('click', () => {
+        clone.getElementById(`fotolabel3-${id}`).addEventListener('click', () => {
             cambiarImagen(id, `url(${fotos.foto3})`);
         });
-
-        clone.getElementById('foto4').style.backgroundImage = `url(${fotos.foto4})`;
-        clone.getElementById('foto4').addEventListener('click', () => {
+        
+        clone.getElementById(`fotolabel4-${id}`).addEventListener('click', () => {
             cambiarImagen(id, `url(${fotos.foto4})`);
         });
-
+        
         clone.querySelector('.cerrar').addEventListener('click', () => {
             achicarProducto(id);
         });

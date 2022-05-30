@@ -3,7 +3,7 @@
 
 $blanco: #f6f3ea;
 $azul: #34539e;
-$azulOscuro: #273644;
+$azulOscuro: rgb(39, 54, 68);
 $celeste: #a1caf1;
 
 $fuente1: 'Gabriela', serif;
@@ -107,8 +107,12 @@ header{
             }
         }
     }
-    
 }  
+@media screen and (max-width:750px){
+    header{
+        margin-bottom: 0;
+    }
+}
 @media screen and (min-width:800px)  {
     header {
         .logo{
