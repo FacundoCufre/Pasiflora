@@ -22,7 +22,7 @@ header {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #273644;
+  background-color: rgb(39, 54, 68);
   margin-bottom: 2px;
   z-index: 2;
   position: sticky;
@@ -157,11 +157,11 @@ main {
   font-size: 16px;
 }
 .filtros label:hover {
-  border-bottom: 2px solid #273644;
+  border-bottom: 2px solid rgb(39, 54, 68);
   padding-bottom: 0;
 }
 .filtros input[type=radio]:checked + label {
-  border-bottom: 4px solid #273644;
+  border-bottom: 4px solid rgb(39, 54, 68);
 }
 .filtros .open--filtros {
   transform: translateX(0%);
@@ -193,7 +193,7 @@ main {
   height: 40px;
   width: 100%;
   transition: all 0.4s;
-  background-color: #273644;
+  background-color: rgb(39, 54, 68);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -239,7 +239,7 @@ main {
 .conteiner .producto .producto-info .producto-info-contenido button:hover {
   cursor: pointer;
   background-color: #f6f3ea;
-  color: #273644;
+  color: rgb(39, 54, 68);
 }
 .conteiner .producto .producto-info .producto-info-contenido button:hover span {
   cursor: pointer;
@@ -272,7 +272,7 @@ main {
   flex-direction: column;
   height: 100%;
   width: 60%;
-  background-color: #273644;
+  background-color: rgb(39, 54, 68);
   justify-content: flex-start;
   align-items: center;
   text-align: center;
@@ -301,12 +301,12 @@ main {
   position: absolute;
   bottom: 0;
 }
-.conteiner .producto-ampliado .producto-info-ampliado .descripcion #detalle:checked + label, .conteiner .producto-ampliado .producto-info-ampliado .descripcion #cuidado:checked + label {
+.conteiner .producto-ampliado .producto-info-ampliado .descripcion .detalle:checked + label, .conteiner .producto-ampliado .producto-info-ampliado .descripcion .cuidado:checked + label {
   border-bottom: 2px solid #f6f3ea;
 }
 .conteiner .producto-ampliado .producto-info-ampliado .descripcion label {
   font-size: 15px;
-  height: 100%;
+  height: 75%;
   width: 100px;
   display: flex;
   justify-content: center;
@@ -357,6 +357,14 @@ main {
 .conteiner .producto-ampliado .producto-info-ampliado .cuidados li span {
   color: #a1caf1;
 }
+.conteiner .producto-ampliado .producto-info-ampliado .fade {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, rgb(39, 54, 68) 0%, transparent 50%);
+}
 .conteiner .producto-ampliado .producto-imagenes {
   height: 100%;
   width: 40%;
@@ -384,7 +392,7 @@ main {
 }
 .conteiner .producto-ampliado .producto-imagenes .imagenes-todas input[type=radio]:checked + label {
   transform: scale(0.9, 0.9);
-  border: 3px solid #273644;
+  border: 3px solid rgb(39, 54, 68);
 }
 .conteiner .producto-ampliado .producto-imagenes .imagenes-todas label {
   height: 100%;
@@ -466,7 +474,7 @@ main {
     margin-top: 5px;
   }
   .conteiner .producto-ampliado .producto-info-ampliado .cuidados {
-    height: 250px;
+    height: 245px;
     top: 100px;
     padding: 0;
     padding-left: 5px;
@@ -507,7 +515,7 @@ main {
     bottom: 0;
     height: 30px;
     width: 100%;
-    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #273644);
+    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(39, 54, 68));
     z-index: 3;
     left: 0;
   }
@@ -617,7 +625,7 @@ main {
     top: 80px;
     height: 20px;
     width: 20px;
-    color: #273644;
+    color: rgb(39, 54, 68);
     font-size: 12px;
     border: none;
     background: none;
@@ -653,8 +661,8 @@ main {
     display: flex;
     flex-direction: column;
     transition: all 0.2s;
-    background-color: #273644;
-    z-index: 1;
+    background-color: rgb(39, 54, 68);
+    z-index: 5;
     padding: 0;
     margin: 0;
     justify-content: flex-start;
@@ -682,7 +690,7 @@ main {
   .filtros {
     height: calc(100vh - 70px);
     width: 100vw;
-    background-color: #273644;
+    background-color: rgb(39, 54, 68);
     justify-content: center;
   }
   .filtros label {

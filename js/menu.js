@@ -19,7 +19,7 @@ function abrirMenu(){
     filtros.setAttribute("class", "open--filtros filtros")
     flecha.setAttribute("class", "fa-solid fa-caret-down open")
     menu.setAttribute("class", "menu open--menu")
-    conteiner.setAttribute("style", "padding-left: calc(10% + 100px)")
+    conteiner.setAttribute("style", "padding-left: calc(10% + 100px); padding-right: 0;")
 }
 
 function cerrarMenu(){

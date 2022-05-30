@@ -71,6 +71,10 @@ const renderProducts = () => {
         clone.querySelector('.ampliar').addEventListener('click', () => {
             ampliarProducto(id);
         });
+        if(product.hasOwnProperty('colores')) {
+            clone.querySelector('.colores-disponibles').textContent = `Disponible: ${product.colores.join(', ')}`;
+        }
+
         clone.querySelector('.descripcion')
         clone.querySelector("#detalle").id = `detalle-${id}` 
         clone.querySelector("#cuidado").id = `cuidado-${id}`
@@ -81,13 +85,13 @@ const renderProducts = () => {
         clone.getElementById(`detallelabel-${id}`).addEventListener(`click`, ()=>{
             cambiarDescripcion(`#detalles-${id}`,`#cuidados-${id}`)
         });
-        clone.getElementById(`detallelabel-${id}`).for = `detalle-${id}` 
+        clone.getElementById(`detallelabel-${id}`).setAttribute('for', `detalle-${id}`)
 
         clone.getElementById("cuidadolabel").id = `cuidadolabel-${id}`
         clone.getElementById(`cuidadolabel-${id}`).addEventListener(`click`, ()=>{
             cambiarDescripcion(`#cuidados-${id}`,`#detalles-${id}`)
         });
-        clone.getElementById(`cuidadolabel-${id}`).for = `cuidado-${id}`
+        clone.getElementById(`cuidadolabel-${id}`).setAttribute('for', `cuidado-${id}`)
 
         clone.querySelector('.detalles').id = `detalles-${id}`
         clone.querySelector(`#detalles-${id}`).innerHTML = `
@@ -115,7 +119,7 @@ const renderProducts = () => {
         clone.querySelector('.imagen-principal').id = `imagen-principal-${id}`;
         clone.querySelector('.imagen-principal').style.backgroundImage = `url(${foto1})`;
         
-        clone.querySelectorAll('input').forEach((input, index) => {
+        clone.querySelectorAll('.imagenes-todas input').forEach((input, index) => {
             input.name = `img-${id}`;
             input.id = `foto${index + 1}-${id}`;
         });
