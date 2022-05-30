@@ -36,8 +36,10 @@ const renderProducts = () => {
             material,
             medidas,
             nombre,
-            precio
+            precio,
         } = product;
+
+        const {foto1, foto2, foto3, foto4} = fotos;
 
         let medidasText = '';
         let cuidadosText = '';
@@ -62,7 +64,7 @@ const renderProducts = () => {
         const clone = templateProducto.cloneNode(true);
 
         clone.querySelector('.producto').id = `producto-${id}`;
-        // clone.querySelector('.producto').style.backgroundImage = `url(${imagen})`;
+        clone.querySelector('.producto').style.backgroundImage = `url(${foto1})`;
         clone.querySelectorAll('.nombre').forEach((nombreProducto) => nombreProducto.textContent = `${nombre}`);
         clone.querySelector('.producto-info-contenido span').textContent = `PEN ${precio}`;
         clone.querySelectorAll('a').forEach((link) => link.href = `#producto-${id}`);
@@ -111,36 +113,44 @@ const renderProducts = () => {
         clone.querySelector(`.fade`)
 
         clone.querySelector('.imagen-principal').id = `imagen-principal-${id}`;
-        clone.querySelector(`#imagen-principal-${id}`).style.backgroundImage = `url(${fotos.fotoPrincipal})`;
+        clone.querySelector('.imagen-principal').style.backgroundImage = `url(${foto1})`;
         
-        clone.querySelector(".imagenes-todas").innerHTML = `
-                            <input type="radio" id='foto1-${id}' name='img-${id}' checked>
-                            <label id='fotolabel1-${id}' for='foto1-${id}' style="background-image: url(${fotos.fotoPrincipal});"></label>
-
-                            <input type="radio" id='foto2-${id}' name='img-${id}'>
-                            <label id='fotolabel2-${id}' for='foto2-${id}' style="background-image: url(${fotos.foto2});"></label>
-
-                            <input type="radio" id='foto3-${id}' name='img-${id}'>
-                            <label id='fotolabel3-${id}' for='foto3-${id}' style="background-image: url(${fotos.foto3});"></label>
-
-                            <input type="radio" id='foto4-${id}' name='img-${id}'>
-                            <label id='fotolabel4-${id}' for='foto4-${id}' style="background-image: url(${fotos.foto4});"></label>
-        `
-
-        clone.getElementById(`fotolabel1-${id}`).addEventListener('click', () => {
-            cambiarImagen(id, `url(${fotos.fotoPrincipal})`);
-        });
-
-        clone.getElementById(`fotolabel2-${id}`).addEventListener('click', () => {
-            cambiarImagen(id, `url(${fotos.foto2})`);
-        });
-
-        clone.getElementById(`fotolabel3-${id}`).addEventListener('click', () => {
-            cambiarImagen(id, `url(${fotos.foto3})`);
+        clone.querySelectorAll('input').forEach((input, index) => {
+            input.name = `img-${id}`;
+            input.id = `foto${index + 1}-${id}`;
         });
         
-        clone.getElementById(`fotolabel4-${id}`).addEventListener('click', () => {
-            cambiarImagen(id, `url(${fotos.foto4})`);
+        clone.querySelectorAll('.imagenes-todas label').forEach((label, index) => {
+            
+            label.id = `label${index + 1}-${id}`;
+            label.setAttribute('for', `foto${index + 1}-${id}`);
+
+        });
+
+        console.log( clone.getElementById(`foto1-${id}`));
+        clone.getElementById(`foto1-${id}`).style.backgroundImage = `url(${foto1})`;
+        clone.getElementById(`label1-${id}`).style.backgroundImage = `url(${foto1})`;
+        clone.getElementById(`foto1-${id}`).addEventListener('click', () => {
+            cambiarImagen(id, `url(${foto1})`);
+        });
+
+
+        clone.getElementById(`foto2-${id}`).style.backgroundImage = `url(${foto2})`;
+        clone.getElementById(`label2-${id}`).style.backgroundImage = `url(${foto2})`;
+        clone.getElementById(`foto2-${id}`).addEventListener('click', () => {
+            cambiarImagen(id, `url(${foto2})`);
+        });
+
+        clone.getElementById(`foto3-${id}`).style.backgroundImage = `url(${foto3})`;
+        clone.getElementById(`label3-${id}`).style.backgroundImage = `url(${foto3})`;
+        clone.getElementById(`foto3-${id}`).addEventListener('click', () => {
+            cambiarImagen(id, `url(${foto3})`);
+        });
+
+        clone.getElementById(`foto4-${id}`).style.backgroundImage = `url(${foto4})`;
+        clone.getElementById(`label4-${id}`).style.backgroundImage = `url(${foto4})`;
+        clone.getElementById(`foto4-${id}`).addEventListener('click', () => {
+            cambiarImagen(id, `url(${foto4})`);
         });
         
         clone.querySelector('.cerrar').addEventListener('click', () => {
