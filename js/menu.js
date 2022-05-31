@@ -29,3 +29,24 @@ function cerrarMenu(){
     conteiner.setAttribute("style", "padding-left: 10%")
 }
 
+let boton = sessionStorage.getItem('boton')
+
+if (boton == 'tienda'){
+  document.querySelector('#filtro-todos').checked = true
+}
+else if (boton == 'collares'){
+  document.querySelector('#filtro-collares').checked = true
+}
+else if (boton == 'aretes'){
+  document.querySelector('#filtro-aretes').checked = true
+}
+else if (boton == 'pulseras'){
+  document.querySelector('#filtro-pulseras').checked = true
+}
+else if (boton == 'novedades'){
+  document.querySelector('#filtro-nuevos').checked = true
+}
+else if (boton == 'ofertas'){
+  document.querySelector('#filtro-ofertas').checked = true
+}
+sessionStorage.removeItem('boton')
