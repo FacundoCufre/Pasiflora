@@ -103,7 +103,6 @@ const renderProducts = () => {
 
         });
 
-        console.log( clone.getElementById(`foto1-${id}`));
         clone.getElementById(`foto1-${id}`).style.backgroundImage = `url(${foto1})`;
         clone.getElementById(`label1-${id}`).style.backgroundImage = `url(${foto1})`;
         clone.getElementById(`foto1-${id}`).addEventListener('click', () => {
