@@ -29,9 +29,15 @@
     </section>
     <header>
       <div class="logo"><span>PASIFLORA</span></div>
+      <input type="button" value="off" id="onoffIndex">
+      <label class="openmenu" for="onoffIndex" onclick="onoffIndex()"><i class="fa-solid fa-bag-shopping"></i><i class="fa-solid fa-caret-left"></i></label>
       <nav class="barra">
-        <button class="tienda"><div></div><a href="html/tienda.html">TIENDA</a></button>
+        <button class="tienda" onclick="linkea('tienda')"><div></div><a href="html/tienda.html">TIENDA</a></button>
+        <button class="tienda" onclick="linkea('collares')"><div></div><a href="html/tienda.html">COLLARES</a></button>
+        <button class="tienda" onclick="linkea('aretes')"><div></div><a href="html/tienda.html">ARETES</a></button>
+        <button class="tienda" onclick="linkea('pulseras')"><div></div><a href="html/tienda.html">PULSERAS</a></button>
       </nav>
+      
     </header>
     <main>
       <section class="imagenes-decorativas">
@@ -68,7 +74,7 @@
       <section class="nuevos" id="nuevos">
         <div class="nuevos-titulo">
           <h2>NOVEDADES</h2>
-          <a href="html/tienda.html"><h4>Ver tienda</h4></a>
+          <a href="html/tienda.html" onclick="linkea('novedades')"><h4>Ver tienda</h4></a>
         </div>
         <div class="nuevos-productos" id="conteiner-nuevos-productos"></div>
       </section>
@@ -76,7 +82,7 @@
       <section class="ofertas" id="ofertas">
         <div class="ofertas-titulo">
           <h2>OFERTAS</h2>
-          <a href="html/tienda.html"><h4>Ver tienda</h4></a>
+          <a href="html/tienda.html" onclick="linkea('ofertas')"><h4>Ver tienda</h4></a>
         </div>
         <div class="ofertas-productos" id="conteiner-ofertas-productos">
           <div class="producto"></div>

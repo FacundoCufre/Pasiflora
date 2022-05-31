@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,7 @@
     <script defer type="module" src="../js/productos.js"></script>
     <script defer type="module" src="../js/renderProductos.js"></script>
     <script src="https://kit.fontawesome.com/e06c33a944.js" crossorigin="anonymous"></script>
+    <script defer src="../js/menu.js"></script>
 </head>
 <body>
     <header>
@@ -19,6 +20,8 @@
     </header>
 
     <main>
+        <input type="button" value="off" id="onoff" onclick="onoff();">
+        <label for="onoff" class="menu" id="menu"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-caret-down"></i></label>
         <section class="filtros">
             <input type="radio" name="filtros" id="filtro-ofertas"></input>
             <label for="filtro-ofertas"><em>OFERTAS</em></label>
@@ -26,7 +29,7 @@
             <input type="radio" name="filtros" id="filtro-nuevos"></input>
             <label for="filtro-nuevos"><em>NUEVOS</em></label>
 
-            <input type="radio" name="filtros" id="filtro-todos" checked></input>
+            <input type="radio" name="filtros" id="filtro-todos"></input>
             <label for="filtro-todos">TODOS</label>
 
             <input type="radio" name="filtros" id="filtro-collares"></input>
@@ -37,15 +40,6 @@
 
             <input type="radio" name="filtros" id="filtro-aretes"></input>
             <label for="filtro-aretes">ARETES</label>
-
-            <input type="radio" name="filtros" id="filtro-tobilleras"></input>
-            <label for="filtro-tobilleras">TOBILLERAS</label>
-
-            <input type="radio" name="filtros" id="filtro-sets"></input>
-            <label for="filtro-sets">SETS</label>
-
-            <input type="radio" name="filtros" id="filtro-llaveros"></input>
-            <label for="filtro-llaveros">LLAVEROS</label>
         </section>
 
         <section class="conteiner" id="conteiner">
@@ -56,36 +50,45 @@
                         <span class="nombre">nombre</span>
                         <div class="producto-info-contenido">
                             <span>$500</span>
-                            <a href="#producto-2"><button class="ampliar"><span>VER PRODUCTO</span></button></a>
+                            <a href="#producto"><button class="ampliar"><span>VER PRODUCTO</span></button></a>
                         </div>
                     </div>
                     <div class="producto-info-ampliado">
                         <span class="nombre">nombre</span>
                         <p class="colores-disponibles"></p>
-                        <div class="detalles" id="detalles-2"></div>
-                        <div class="cuidados" id="cuidados-2"></div>
+                        <div class="descripcion">
+                            <input type="radio" id="detalle" class="detalle" checked></input>
+                            <label for="detalle" id="detallelabel"><span>DETALLES</span></label>
+
+                            <input type="radio" id="cuidado" class="cuidado"></input>
+                            <label for="cuidado" id="cuidadolabel"><span>CUIDADOS</span></label>
+                        </div>
+                        <div class="detalles"></div>
+                        <div class="cuidados"></div>
+                        <div class="fade"></div>
                     </div>
                     <div class="producto-imagenes">
-                        <div class="imagen-principal" id="imagen-principal-2" style="background-image: url(../img/muestra3.jpeg);"></div>
+                        <div class="imagen-principal" style="background-image: url(../img/muestra3.jpeg);"></div>
                         <div class="imagenes-todas">
-                            <input type="radio" name="img-2" id="foto1-2" checked>
+                            <input type="radio" name="img-2" id="foto1" checked>
                             <label id="label1-2" for="foto1-2" style="background-image: url(../img/muestra3.jpeg);"></label>
                             
-                            <input type="radio" name="img-2" id="foto2-2">
-                            <label id="label2-2" for="foto2-2" style="background-image: url(../img/muestra4.jpeg);"></label>
+                            <input type="radio" name="img-2" id="foto2">
+                            <label id="label1-2" for="foto1-2" style="background-image: url(../img/muestra3.jpeg);"></label>
                             
-                            <input type="radio" name="img-2" id="foto3-2">
+                            <input type="radio" name="img-2" id="foto3">
                             <label id="label3-2" for="foto3-2" style="background-image: url(../img/muestra5.jpeg);"></label>
                             
-                            <input type="radio" name="img-2" id="foto4-2">
+                            <input type="radio" name="img-2" id="foto4">
                             <label id="label4-2" for="foto4-2" style="background-image: url(../img/muestra6.jpeg);"></label>
                 
                         </div>
                     </div>
-                    <a href="#producto-2"><div class="cerrar"><i class="fa-solid fa-xmark"></i></div></a>
+                    <a href="#producto"><div class="cerrar"><i class="fa-solid fa-xmark"></i></div></a>
+                </div>   
             </template>
 
-            </div>
+            
         
         </section>
     </main>

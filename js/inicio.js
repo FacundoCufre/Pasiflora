@@ -6,6 +6,37 @@ checkAviso.addEventListener(`click`, ()=>{
     aviso.setAttribute("style", "display:none")
 })
 
+//MENU
+
+const flecha = document.querySelector(".fa-caret-left")
+const menu = document.querySelector(".barra")
+
+function onoffIndex(){
+    currentvalue = document.getElementById('onoffIndex').value;
+    if(currentvalue == "Off"){
+      document.getElementById("onoffIndex").value="On";
+      abrirMenu()
+    }
+    else{
+        document.getElementById("onoffIndex").value="Off";
+        cerrarMenu()
+    }
+}
+
+function abrirMenu(){
+    flecha.setAttribute("class", "fa-solid fa-caret-down")
+    menu.setAttribute("class", "barra open")
+}
+
+function cerrarMenu(){
+    flecha.setAttribute("class", "fa-solid fa-caret-left")
+    menu.setAttribute("class", "barra")
+}
+
+function linkea(a){
+    sessionStorage.setItem('boton', a)
+}
+
 //GALERIA
 
 const imagenesMuestra = ["img/muestra1.jpeg", "./img/muestra2.jpeg", "img/muestra3.jpeg", "img/muestra4.jpeg", "img/muestra5.jpeg", "img/muestra6.jpeg", "img/muestra12.jpeg", "img/muestra8.jpeg", "img/muestra9.jpg", "img/muestra10.jpeg", "img/muestra11.jpeg", "img/muestra7.jpeg", "img/muestra14.jpeg", "img/muestra13.jpeg"]

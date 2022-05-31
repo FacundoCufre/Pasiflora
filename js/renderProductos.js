@@ -1,5 +1,5 @@
 import { fetchProducts } from "./firebase.js";
-import { ampliarProducto2, cambiarImagen, achicarProducto2 } from "./productos.js";
+import { ampliarProducto, cambiarImagen, achicarProducto, cambiarDescripcion } from "./productos.js";
 
 const contenedorProductos = document.getElementById('conteiner');
 const templateProducto = document.getElementById('template-card-producto').content;
@@ -57,7 +57,7 @@ const renderProducts = () => {
 
         cuidados.forEach((cuidado) => {
             cuidadosText += `
-                <li>${cuidado}</li>
+                <li><span>♢  </span>${cuidado}</li>
             `;
         });
 
@@ -69,29 +69,57 @@ const renderProducts = () => {
         clone.querySelector('.producto-info-contenido span').textContent = `PEN ${precio}`;
         clone.querySelectorAll('a').forEach((link) => link.href = `#producto-${id}`);
         clone.querySelector('.ampliar').addEventListener('click', () => {
-            ampliarProducto2(id);
+            ampliarProducto(id);
         });
-
         if(product.hasOwnProperty('colores')) {
             clone.querySelector('.colores-disponibles').textContent = `Disponible: ${product.colores.join(', ')}`;
         }
 
-        clone.querySelector('.detalles').innerHTML = `
-            <p>Material: ${material}</p>
-            <p>Medidas:</p>
-            <ul>
-                ${medidasText}
-            </ul>   
+        clone.querySelector('.descripcion')
+        clone.querySelector("#detalle").id = `detalle-${id}` 
+        clone.querySelector("#cuidado").id = `cuidado-${id}`
+        clone.getElementById(`detalle-${id}`).name = `desc-${id}`;
+        clone.getElementById(`cuidado-${id}`).name = `desc-${id}`;
+
+        clone.getElementById("detallelabel").id = `detallelabel-${id}`
+        clone.getElementById(`detallelabel-${id}`).addEventListener(`click`, ()=>{
+            cambiarDescripcion(`#detalles-${id}`,`#cuidados-${id}`)
+        });
+        clone.getElementById(`detallelabel-${id}`).setAttribute('for', `detalle-${id}`)
+
+        clone.getElementById("cuidadolabel").id = `cuidadolabel-${id}`
+        clone.getElementById(`cuidadolabel-${id}`).addEventListener(`click`, ()=>{
+            cambiarDescripcion(`#cuidados-${id}`,`#detalles-${id}`)
+        });
+        clone.getElementById(`cuidadolabel-${id}`).setAttribute('for', `cuidado-${id}`)
+
+        clone.querySelector('.detalles').id = `detalles-${id}`
+        clone.querySelector(`#detalles-${id}`).innerHTML = `
+            <div>
+                <span>Material:</span>
+                <p>${material}</p>
+            </div>
+            <div>
+                <span>Medidas:</span>
+                <ul>
+                    ${medidasText}
+                </ul>
+            </div>
         `;
-        clone.querySelector('.cuidados').innerHTML = `
+
+        clone.querySelector('.cuidados').id = `cuidados-${id}`
+        clone.querySelector(`#cuidados-${id}`).innerHTML = `
             <ul>
                 ${cuidadosText}
             </ul>
         `;
+
+        clone.querySelector(`.fade`)
+
         clone.querySelector('.imagen-principal').id = `imagen-principal-${id}`;
         clone.querySelector('.imagen-principal').style.backgroundImage = `url(${foto1})`;
         
-        clone.querySelectorAll('input').forEach((input, index) => {
+        clone.querySelectorAll('.imagenes-todas input').forEach((input, index) => {
             input.name = `img-${id}`;
             input.id = `foto${index + 1}-${id}`;
         });
@@ -127,9 +155,9 @@ const renderProducts = () => {
         clone.getElementById(`foto4-${id}`).addEventListener('click', () => {
             cambiarImagen(id, `url(${foto4})`);
         });
-
+        
         clone.querySelector('.cerrar').addEventListener('click', () => {
-            achicarProducto2(id);
+            achicarProducto(id);
         });
 
         fragment.appendChild(clone);
