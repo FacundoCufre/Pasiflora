@@ -29,7 +29,7 @@ function cerrarMenu(){
     conteiner.setAttribute("style", "padding-left: 10%")
 }
 
-let boton = localStorage.getItem('boton')
+let boton = sessionStorage.getItem('boton')
 
 if (boton == 'todos'){
   document.querySelector('#filtro-todos').checked = true
@@ -49,4 +49,4 @@ else if (boton == 'nuevos'){
 else if (boton == 'ofertas'){
   document.querySelector('#filtro-ofertas').checked = true
 }
-sessionStorage.removeItem('boton')
+// sessionStorage.removeItem('boton')

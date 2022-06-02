@@ -6,7 +6,7 @@ const templateProducto = document.getElementById('template-card-producto').conte
 const fragment = document.createDocumentFragment();
 let catalogoProductos = [];
 
-let category = localStorage.getItem('boton') ?? '';
+let category = sessionStorage.getItem('boton') ?? '';
 
 const getProductsByCategory = async(nombreCategoria) => {
     let response;
@@ -242,7 +242,7 @@ const filtrosTienda = document.querySelectorAll('.filtros label');
 filtrosTienda.forEach((filtro) => {
     filtro.addEventListener('click', async() => {
         category = filtro.textContent.toLowerCase();
-        localStorage.setItem('boton', category);
+        sessionStorage.setItem('boton', category);
         catalogoProductos = await getProducts();
         renderProducts();
     });
