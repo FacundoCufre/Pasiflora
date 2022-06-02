@@ -13,31 +13,47 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script defer src="js/inicio.js"></script>
-    <script defer src="js/productos.js"></script>
+    <script defer type="module" src="js/productos.js"></script>
   </head>
 
   <body>
     <section class="aviso" id="aviso">
       <div class="aviso--texto">
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis at
-          cupiditate omnis molestiae harum.</span>
+        <span
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis at
+          cupiditate omnis molestiae harum.</span
+        >
       </div>
       <div class="aviso--check">
-        <input type="checkbox" id="check1"/>
+        <input type="checkbox" id="check1" />
         <label for="check1"><i class="fa-solid fa-xmark"></i></label>
       </div>
     </section>
     <header>
       <div class="logo"><span>PASIFLORA</span></div>
-      <input type="button" value="off" id="onoffIndex">
-      <label class="openmenu" for="onoffIndex" onclick="onoffIndex()"><i class="fa-solid fa-bag-shopping"></i><i class="fa-solid fa-caret-left"></i></label>
+      <input type="button" value="off" id="onoffIndex" />
+      <label class="openmenu" for="onoffIndex" onclick="onoffIndex()"
+        ><i class="fa-solid fa-bag-shopping"></i
+        ><i class="fa-solid fa-caret-left"></i
+      ></label>
       <nav class="barra">
-        <button class="tienda" onclick="linkea('tienda')"><div></div><a href="html/tienda.html">TIENDA</a></button>
-        <button class="tienda" onclick="linkea('collares')"><div></div><a href="html/tienda.html">COLLARES</a></button>
-        <button class="tienda" onclick="linkea('aretes')"><div></div><a href="html/tienda.html">ARETES</a></button>
-        <button class="tienda" onclick="linkea('pulseras')"><div></div><a href="html/tienda.html">PULSERAS</a></button>
+        <button class="tienda" onclick="linkea('todos')">
+          <div></div>
+          <a href="html/tienda.html">TIENDA</a>
+        </button>
+        <button class="tienda" onclick="linkea('collares')">
+          <div></div>
+          <a href="html/tienda.html">COLLARES</a>
+        </button>
+        <button class="tienda" onclick="linkea('aretes')">
+          <div></div>
+          <a href="html/tienda.html">ARETES</a>
+        </button>
+        <button class="tienda" onclick="linkea('pulseras')">
+          <div></div>
+          <a href="html/tienda.html">PULSERAS</a>
+        </button>
       </nav>
-      
     </header>
     <main>
       <section class="imagenes-decorativas">
@@ -74,7 +90,9 @@
       <section class="nuevos" id="nuevos">
         <div class="nuevos-titulo">
           <h2>NOVEDADES</h2>
-          <a href="html/tienda.html" onclick="linkea('novedades')"><h4>Ver tienda</h4></a>
+          <a href="html/tienda.html" onclick="linkea('novedades')"
+            ><h4>Ver tienda</h4></a
+          >
         </div>
         <div class="nuevos-productos" id="conteiner-nuevos-productos"></div>
       </section>
@@ -82,7 +100,9 @@
       <section class="ofertas" id="ofertas">
         <div class="ofertas-titulo">
           <h2>OFERTAS</h2>
-          <a href="html/tienda.html" onclick="linkea('ofertas')"><h4>Ver tienda</h4></a>
+          <a href="html/tienda.html" onclick="linkea('ofertas')"
+            ><h4>Ver tienda</h4></a
+          >
         </div>
         <div class="ofertas-productos" id="conteiner-ofertas-productos">
           <div class="producto"></div>
@@ -91,7 +111,9 @@
 
       <section class="consideraciones">
         <div class="consideracion">
-          <div class="consideracion--logo"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="consideracion--logo">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
           <div class="consideracion__texto">
             <h4>Envíos a nivel nacional</h4>
             <p>
@@ -102,7 +124,9 @@
         </div>
 
         <div class="consideracion">
-          <div class="consideracion--logo"><i class="fa-solid fa-ring"></i></div>
+          <div class="consideracion--logo">
+            <i class="fa-solid fa-ring"></i>
+          </div>
           <div class="consideracion__texto">
             <h4>Productos hechos de acero inoxidable</h4>
             <p>
@@ -113,7 +137,9 @@
         </div>
 
         <div class="consideracion">
-          <div class="consideracion--logo"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <div class="consideracion--logo">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
 
           <div class="consideracion__texto">
             <h4>Productos hechos a mano</h4>
@@ -234,9 +260,24 @@
         <!-- Modificar según lo indicado -->
         <p>&copy; 2021 Todos los derechos reservados, Pasiflora</p>
         <div class="social-icons">
-          <a class="social-link" href="https://es-la.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a class="social-link" href="https://twitter.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a class="social-link" href="https://www.instagram.com/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a
+            class="social-link"
+            href="https://es-la.facebook.com/"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="social-link"
+            href="https://twitter.com/?lang=es"
+            target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="social-link"
+            href="https://www.instagram.com/?hl=es"
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
       </div>
     </footer>

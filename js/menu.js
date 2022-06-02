@@ -29,9 +29,9 @@ function cerrarMenu(){
     conteiner.setAttribute("style", "padding-left: 10%")
 }
 
-let boton = sessionStorage.getItem('boton')
+let boton = localStorage.getItem('boton')
 
-if (boton == 'tienda'){
+if (boton == 'todos'){
   document.querySelector('#filtro-todos').checked = true
 }
 else if (boton == 'collares'){
@@ -43,7 +43,7 @@ else if (boton == 'aretes'){
 else if (boton == 'pulseras'){
   document.querySelector('#filtro-pulseras').checked = true
 }
-else if (boton == 'novedades'){
+else if (boton == 'nuevos'){
   document.querySelector('#filtro-nuevos').checked = true
 }
 else if (boton == 'ofertas'){

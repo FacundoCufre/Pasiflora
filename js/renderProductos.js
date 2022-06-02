@@ -1,4 +1,4 @@
-import { fetchProducts } from "./firebase.js";
+import { fetchProducts, fetchFilteredProducts, fetchNuevosOfertas } from "./firebase.js";
 import { ampliarProducto, cambiarImagen, achicarProducto, cambiarDescripcion } from "./productos.js";
 
 const contenedorProductos = document.getElementById('conteiner');
@@ -6,9 +6,49 @@ const templateProducto = document.getElementById('template-card-producto').conte
 const fragment = document.createDocumentFragment();
 let catalogoProductos = [];
 
+let category = localStorage.getItem('boton') ?? '';
+
+const getProductsByCategory = async(nombreCategoria) => {
+    let response;
+
+    try {
+        switch(nombreCategoria) {
+            case 'collares':
+                response = await fetchFilteredProducts('collar');
+            break;
+
+            case 'pulseras':
+                response = await fetchFilteredProducts('pulsera');
+            break;
+
+            case 'aretes':
+                response = await fetchFilteredProducts('aretes');
+            break;
+
+            case 'nuevos':
+                response = await fetchNuevosOfertas(category);
+            break;
+
+            case 'ofertas':
+                response = await fetchNuevosOfertas(category);
+            break;
+
+            default:
+                response = await fetchProducts();
+            break;
+        }
+
+        return response;
+
+    } catch (error) {
+        console.log(error);
+    }
+} 
+
+
 const getProducts = async() => {
     try {
-        const response = await fetchProducts();
+        const response = await getProductsByCategory(category);
         const docs = response.docs;
         
         const products = docs.map((doc) => {
@@ -137,24 +177,46 @@ const renderProducts = () => {
             cambiarImagen(id, `url(${foto1})`);
         });
 
-
         clone.getElementById(`foto2-${id}`).style.backgroundImage = `url(${foto2})`;
         clone.getElementById(`label2-${id}`).style.backgroundImage = `url(${foto2})`;
-        clone.getElementById(`foto2-${id}`).addEventListener('click', () => {
-            cambiarImagen(id, `url(${foto2})`);
-        });
+        if(foto2 !== '') {
+            clone.getElementById(`foto2-${id}`).addEventListener('click', () => {
+                cambiarImagen(id, `url(${foto2})`);
+            });
+        }
+        
 
         clone.getElementById(`foto3-${id}`).style.backgroundImage = `url(${foto3})`;
         clone.getElementById(`label3-${id}`).style.backgroundImage = `url(${foto3})`;
-        clone.getElementById(`foto3-${id}`).addEventListener('click', () => {
-            cambiarImagen(id, `url(${foto3})`);
-        });
-
+        if(foto3 !== '') {
+            clone.getElementById(`foto3-${id}`).addEventListener('click', () => {
+                cambiarImagen(id, `url(${foto3})`);
+            });
+        }
+        
         clone.getElementById(`foto4-${id}`).style.backgroundImage = `url(${foto4})`;
         clone.getElementById(`label4-${id}`).style.backgroundImage = `url(${foto4})`;
-        clone.getElementById(`foto4-${id}`).addEventListener('click', () => {
-            cambiarImagen(id, `url(${foto4})`);
+        if(foto4 !== '') {
+            clone.getElementById(`foto4-${id}`).addEventListener('click', () => {
+                cambiarImagen(id, `url(${foto4})`);
+            });
+        }
+        
+        //  *********** Evitar que se aplique el estilo de checked *************
+        let labelWithoutImg = '';
+        let arrayNoImg = [];
+        clone.querySelectorAll('.imagenes-todas label').forEach((label) => {
+            if(label.style.backgroundImage === 'url("")') {
+                // label.addEventListener('click', () => {
+                //     label.disabled = 'true';
+                //     labelWithoutImg = label.getAttribute('for');
+                //     console.log(`${labelWithoutImg}`);
+                //     // console.log(clone.getElementById(`foto2-0XPb2KtxTP0W8XF8COjn`));
+                // });
+            };
         });
+        // ******************************************************+
+
         
         clone.querySelector('.cerrar').addEventListener('click', () => {
             achicarProducto(id);
@@ -163,10 +225,25 @@ const renderProducts = () => {
         fragment.appendChild(clone);
     });
 
+    contenedorProductos.innerHTML = '';
     contenedorProductos.appendChild(fragment);
 };
+
+
 
 document.addEventListener('DOMContentLoaded', async() => {
     catalogoProductos = await getProducts();
     renderProducts();
+});
+
+
+const filtrosTienda = document.querySelectorAll('.filtros label');
+
+filtrosTienda.forEach((filtro) => {
+    filtro.addEventListener('click', async() => {
+        category = filtro.textContent.toLowerCase();
+        localStorage.setItem('boton', category);
+        catalogoProductos = await getProducts();
+        renderProducts();
+    });
 });

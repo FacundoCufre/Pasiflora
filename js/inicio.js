@@ -34,7 +34,7 @@ function cerrarMenu(){
 }
 
 function linkea(a){
-    sessionStorage.setItem('boton', a)
+    localStorage.setItem('boton', a)
 }
 
 //GALERIA
