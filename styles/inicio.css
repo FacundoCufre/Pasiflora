@@ -349,7 +349,7 @@ main .conteiner-info .info {
 }
 main .conteiner-info .info p {
   text-align: center;
-  font-size: 25px;
+  font-size: 16px;
   color: #f6f3ea;
   font-family: "Gabriela", serif;
 }
@@ -370,9 +370,7 @@ main .nuevos .nuevos-titulo, main .nuevos .ofertas-titulo, main .ofertas .nuevos
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 0 20px 10px 20px;
-  padding-bottom: 10px;
-  padding-left: 20px;
+  padding: 0 10px 10px 10px;
   height: 100px;
 }
 main .nuevos .nuevos-titulo h2, main .nuevos .ofertas-titulo h2, main .ofertas .nuevos-titulo h2, main .ofertas .ofertas-titulo h2 {
@@ -380,7 +378,7 @@ main .nuevos .nuevos-titulo h2, main .nuevos .ofertas-titulo h2, main .ofertas .
   font-family: "Cormorant Garamond", serif;
 }
 main .nuevos .nuevos-titulo a, main .nuevos .ofertas-titulo a, main .ofertas .nuevos-titulo a, main .ofertas .ofertas-titulo a {
-  font-size: 10px;
+  font-size: 8px;
   font-family: "Gabriela", serif;
   text-decoration: none;
   cursor: pointer;
@@ -391,6 +389,7 @@ main .nuevos .nuevos-titulo a, main .nuevos .ofertas-titulo a, main .ofertas .nu
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 5px;
 }
 main .nuevos .nuevos-titulo a h4, main .nuevos .ofertas-titulo a h4, main .ofertas .nuevos-titulo a h4, main .ofertas .ofertas-titulo a h4 {
   cursor: pointer;
@@ -502,6 +501,7 @@ main .slider-container__text-container .review {
   font-family: "Cormorant Garamond", serif;
   font-size: 12px;
   text-align: center;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 575px) {
@@ -536,8 +536,14 @@ main .slider-container__text-container .review {
     grid-row: 2/3;
   }
 
+  main .conteiner-info p {
+    font-size: 22px;
+  }
   main .nuevos .nuevos-titulo h2, main .nuevos .ofertas-titulo h2, main .ofertas .nuevos-titulo h2, main .ofertas .ofertas-titulo h2 {
     font-size: 25px;
+  }
+  main .nuevos .nuevos-titulo a, main .nuevos .ofertas-titulo a, main .ofertas .nuevos-titulo a, main .ofertas .ofertas-titulo a {
+    font-size: 11px;
   }
   main .slider-container {
     max-width: 600px;
@@ -608,11 +614,16 @@ main .slider-container__text-container .review {
   main .conteiner-info .info {
     width: 50%;
     filter: opacity(80%);
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   main .consideraciones {
     flex-direction: row;
+  }
+  main .consideraciones .consideracion {
+    width: 33%;
   }
   main .slider-container {
     grid-template-columns: 30px 2fr 30px;

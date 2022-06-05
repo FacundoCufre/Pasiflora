@@ -39,18 +39,36 @@ header .logo {
   font-size: 20px;
   font-family: "Cormorant Garamond", serif;
 }
-header .barra {
-  width: 100px;
-  height: 60px;
+header #onoffIndex {
+  display: none;
+}
+header .openmenu {
+  position: absolute;
+  right: 10px;
+  width: 30px;
+  height: 20px;
+  color: #f6f3ea;
+  font-size: 14px;
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
+header .barra {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(39, 54, 68);
+  position: absolute;
+  right: 40px;
+  bottom: -280px;
+  transform: translateY(-150%);
+  transition: all 0.3s;
+}
 header .barra .tienda {
-  width: 80px;
   height: 40px;
-  font-size: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,19 +101,36 @@ header .barra .tienda:hover div {
 header .barra .tienda:hover a {
   letter-spacing: 2px;
 }
+header .open {
+  transform: translateX(0);
+}
 
 @media screen and (min-width: 575px) {
   header .logo {
     margin-left: 40px;
     font-size: 25px;
   }
+  header .barra {
+    width: 200px;
+  }
   header .barra .tienda {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 750px) {
   header {
     margin-bottom: 0;
+  }
+  header .barra {
+    flex-direction: row;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 500px;
+    transform: translateY(0);
+  }
+  header .openmenu {
+    display: none;
   }
 }
 @media screen and (min-width: 800px) {
@@ -113,6 +148,10 @@ header .barra .tienda:hover a {
     width: 65px;
   }
 }
+header .barra {
+  width: 80px;
+}
+
 main {
   height: auto;
 }
@@ -170,6 +209,7 @@ main {
 
 .conteiner {
   width: 100%;
+  min-height: 80vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -620,6 +660,14 @@ main {
 }
 /* End of Footer */
 @media screen and (max-width: 750px) {
+  header .barra {
+    position: relative;
+    transform: translateY(0%);
+    bottom: 0;
+    right: 10px;
+    height: 100%;
+  }
+
   .menu {
     display: flex;
     top: 80px;
@@ -687,6 +735,15 @@ main {
   }
 }
 @media screen and (max-width: 500px) {
+  header .logo {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  header .barra {
+    font-size: 16px;
+  }
+
   .filtros {
     height: calc(100vh - 70px);
     width: 100vw;
@@ -701,7 +758,7 @@ main {
 
   .menu {
     top: 24px;
-    left: calc(100% - 110px);
+    left: calc(100% - 95px);
     font-size: 12px;
     z-index: 4;
     color: #f6f3ea;
