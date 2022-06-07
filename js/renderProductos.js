@@ -211,12 +211,10 @@ const renderProducts = () => {
         let arrayNoImg = [];
         clone.querySelectorAll('.imagenes-todas label').forEach((label) => {
             if(label.style.backgroundImage === 'url("")') {
-                // label.addEventListener('click', () => {
-                //     label.disabled = 'true';
-                //     labelWithoutImg = label.getAttribute('for');
-                //     console.log(`${labelWithoutImg}`);
-                //     // console.log(clone.getElementById(`foto2-0XPb2KtxTP0W8XF8COjn`));
-                // });
+                console.log(label);
+                label.addEventListener('click', () => {
+                    label.style.border = 'none';
+                });
             };
         });
         // ******************************************************+
