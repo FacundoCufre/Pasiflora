@@ -77,6 +77,7 @@ const renderProducts = () => {
             medidas,
             nombre,
             precio,
+            ofertas,
         } = product;
 
         const {foto1, foto2, foto3, foto4} = fotos;
@@ -106,7 +107,10 @@ const renderProducts = () => {
         clone.querySelector('.producto').id = `producto-${id}`;
         clone.querySelector('.producto').style.backgroundImage = `url(${foto1})`;
         clone.querySelectorAll('.nombre').forEach((nombreProducto) => nombreProducto.textContent = `${nombre}`);
-        clone.querySelector('.producto-info-contenido span').textContent = `PEN ${precio}`;
+        if(ofertas){
+            clone.querySelector('.precio-anterior').textContent = `PEN ${product.precioAnterior}`;
+        }
+        clone.querySelector('.precio').textContent = `PEN ${precio}`;
         clone.querySelectorAll('a').forEach((link) => link.href = `#producto-${id}`);
         clone.querySelector('.ampliar').addEventListener('click', () => {
             ampliarProducto(id);
