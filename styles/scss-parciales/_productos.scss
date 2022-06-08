@@ -171,6 +171,29 @@
                     font-family: $fuente2;
                 }
             }
+            a{
+                text-decoration: none;
+                .boton-compra{
+                    border: 1px solid $celeste;
+                    height: 32px;
+                    width: 82px;
+                    border-radius: 5px;
+                    .boton-compra-texto{
+                        border: none; 
+                        color: $celeste;
+                        font-weight: 700;
+                    }
+                }
+                &:hover{
+                    background-color: $celeste;
+                    .boton-compra{
+                        .boton-compra-texto{
+                            color: $azulOscuro;
+                        }
+                    }
+                }
+            }
+            
             .colores-disponibles{
                 margin-left: 10px;
                 margin-right: 10px;
