@@ -115,9 +115,7 @@ const renderProducts = () => {
         clone.querySelector('.ampliar').addEventListener('click', () => {
             ampliarProducto(id);
         });
-        if(product.hasOwnProperty('colores')) {
-            clone.querySelector('.colores-disponibles').textContent = `Disponible: ${product.colores.join(', ')}`;
-        }
+        
 
         clone.querySelector('.descripcion')
         clone.querySelector("#detalle").id = `detalle-${id}` 
@@ -136,7 +134,7 @@ const renderProducts = () => {
             cambiarDescripcion(`#cuidados-${id}`,`#detalles-${id}`)
         });
         clone.getElementById(`cuidadolabel-${id}`).setAttribute('for', `cuidado-${id}`)
-
+        
         clone.querySelector('.detalles').id = `detalles-${id}`
         clone.querySelector(`#detalles-${id}`).innerHTML = `
             <div>
@@ -149,7 +147,11 @@ const renderProducts = () => {
                     ${medidasText}
                 </ul>
             </div>
+            <p class="colores-disponibles"></p>
         `;
+        if(product.hasOwnProperty('colores')) {
+            clone.querySelector('.colores-disponibles').textContent = `Disponible en: ${product.colores.join(', ')}`;
+        }
 
         clone.querySelector('.cuidados').id = `cuidados-${id}`
         clone.querySelector(`#cuidados-${id}`).innerHTML = `
