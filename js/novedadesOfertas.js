@@ -1,5 +1,5 @@
 import { fetchNuevosOfertasInicio } from "./firebase.js";
-import { achicarProducto, ampliarProducto } from "./productos.js";
+import { achicarProducto, ampliarProducto, cambiarImagen, cambiarDescripcion } from "./productos.js";
 
 const templateProducto = document.getElementById('template-card-producto').content;
 const contenedorNovedades = document.getElementById('conteiner-nuevos-productos');
@@ -139,7 +139,7 @@ const renderCards = (productosCategoria, contenedor) => {
                     ${medidasText}
                 </ul>
             </div>
-            <a href="https://wa.me/c/51902003274"><div class="boton-compra">
+            <a href="https://wa.me/c/51902003274" target="_blank"><div class="boton-compra">
                 <span class="boton-compra-texto">Comprar</span>
             </div></a>
             <p class="colores-disponibles"></p>
