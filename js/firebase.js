@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
+import { getFirestore, collection, getDocs, query, where, limit } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,5 +32,10 @@ export const fetchFilteredProducts = (nombreCategoria) => {
 
 export const fetchNuevosOfertas = (categoria) => {
   const q = query(dbCollection, where(categoria, "==", true));
+  return getDocs(q);
+}
+
+export const fetchNuevosOfertasInicio = (categoria) => {
+  const q = query(dbCollection, where(categoria, "==", true), limit(3));
   return getDocs(q);
 }

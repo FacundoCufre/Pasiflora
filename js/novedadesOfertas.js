@@ -1,72 +1,65 @@
-import { fetchProducts, fetchFilteredProducts, fetchNuevosOfertas } from "./firebase.js";
-import { ampliarProducto, cambiarImagen, achicarProducto, cambiarDescripcion } from "./productos.js";
+import { fetchNuevosOfertasInicio } from "./firebase.js";
+import { achicarProducto, ampliarProducto } from "./productos.js";
 
-const contenedorProductos = document.getElementById('conteiner');
 const templateProducto = document.getElementById('template-card-producto').content;
+const contenedorNovedades = document.getElementById('conteiner-nuevos-productos');
+const contenedorOfertas = document.getElementById('conteiner-ofertas-productos');
 const fragment = document.createDocumentFragment();
-let catalogoProductos = [];
 
-let category = sessionStorage.getItem('boton') ?? '';
+// Obtener productos nuevos y ofertas para página de inicio
+let response;
+let docs;
+let products;
+let nuevos;
+let ofertas;
 
-const getProductsByCategory = async(nombreCategoria) => {
-    let response;
-
-    try {
-        switch(nombreCategoria) {
-            case 'collares':
-                response = await fetchFilteredProducts('collar');
-            break;
-
-            case 'pulseras':
-                response = await fetchFilteredProducts('pulsera');
-            break;
-
-            case 'aretes':
-                response = await fetchFilteredProducts('aretes');
-            break;
-
-            case 'nuevos':
-                response = await fetchNuevosOfertas(category);
-            break;
-
-            case 'ofertas':
-                response = await fetchNuevosOfertas(category);
-            break;
-
-            default:
-                response = await fetchProducts();
-            break;
-        }
-
-        return response;
-
-    } catch (error) {
-        console.log(error);
-    }
-} 
-
-
-const getProducts = async() => {
-    try {
-        const response = await getProductsByCategory(category);
-        const docs = response.docs;
-        
-        const products = docs.map((doc) => {
-            return ({
-                id: doc.id,
-                ...doc.data(),
-            });
+const getProducts = async(categoria) => {
+    response = await fetchNuevosOfertasInicio(categoria);
+    docs = response.docs;
+    return docs.map((doc) => {
+        return ({
+            id: doc.id,
+            ...doc.data(),
         });
-
-        return products;
-    } catch (error) {
-        console.log(error);
-    };
+    });
 };
 
-const renderProducts = (contenedor) => {
-    
-    catalogoProductos.forEach((product) => {
+// const renderCards = (productosCategoria, contenedor) => {
+//     productosCategoria.forEach((product) => {
+
+//         const {
+//             id,
+//             cuidados,
+//             fotos,
+//             material,
+//             medidas,
+//             nombre,
+//             precio,
+//             ofertas,
+//         } = product;
+
+//         const {foto1} = fotos;
+
+//         const clone = templateProducto.cloneNode(true);
+
+//         clone.querySelector('.producto').id = `producto-${id}`;
+//         clone.querySelector('.producto').style.backgroundImage = `url(${foto1})`;
+//         clone.querySelectorAll('.nombre').forEach((nombreProducto) => nombreProducto.textContent = `${nombre}`);
+//         if(ofertas){
+//             clone.querySelector('.precio-anterior').textContent = `PEN ${product.precioAnterior}`;
+//         }
+//         clone.querySelector('.precio').textContent = `PEN ${precio}`;
+
+//         fragment.appendChild(clone);
+//     });
+
+//     contenedor.innerHTML = '';
+//     contenedor.appendChild(fragment);
+// }
+
+
+const renderCards = (productosCategoria, contenedor) => {
+    productosCategoria.forEach((product) => {
 
         const {
             id,
@@ -227,23 +220,14 @@ const renderProducts = (contenedor) => {
 
     contenedor.innerHTML = '';
     contenedor.appendChild(fragment);
-};
+}
 
-
-
-document.addEventListener('DOMContentLoaded', async() => {
-    catalogoProductos = await getProducts();
-    renderProducts(contenedorProductos);
+document.addEventListener('DOMContentLoaded', async () => {
+    actualizarGaleria();
+    nuevos = await getProducts('nuevos');
+    ofertas = await getProducts('ofertas');
+    renderCards(nuevos, contenedorNovedades);
+    renderCards(ofertas, contenedorOfertas);
+    // console.log(ofertas);
 });
 
-
-const filtrosTienda = document.querySelectorAll('.filtros label');
-
-filtrosTienda.forEach((filtro) => {
-    filtro.addEventListener('click', async() => {
-        category = filtro.textContent.toLowerCase();
-        sessionStorage.setItem('boton', category);
-        catalogoProductos = await getProducts();
-        renderProducts(contenedorProductos);
-    });
-});

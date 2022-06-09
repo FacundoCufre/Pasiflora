@@ -10,10 +10,12 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles/inicio.css" />
+    <!-- <link rel="stylesheet" href="styles/tienda.css" /> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script defer src="js/inicio.js"></script>
     <script defer type="module" src="js/productos.js"></script>
+    <script defer type="module" src="js/novedadesOfertas.js"></script>
   </head>
 
   <body>
@@ -94,7 +96,69 @@
             ><h4>Ver tienda</h4></a
           >
         </div>
-        <div class="nuevos-productos" id="conteiner-nuevos-productos"></div>
+        <div class="nuevos-productos" id="conteiner-nuevos-productos">
+          <!-- <template id="template-card-producto">
+            <div
+              class="producto"
+              id="producto-2"
+              style="background-image: url(../img/muestra10.jpeg)"
+            >
+              <div class="producto-info">
+                <span class="nombre">nombre</span>
+                <div class="producto-info-contenido">
+                  <span class="precio-anterior"></span>
+                  <span class="precio">$500</span>
+                </div>
+              </div>
+            </div>
+          </template> -->
+
+          <template id="template-card-producto">
+            <div class="producto" id="producto-2" style="background-image: url(../img/muestra10.jpeg);">
+                <div class="producto-info">
+                    <span class="nombre">nombre</span>
+                    <div class="producto-info-contenido">
+                        <span class="precio-anterior"></span>
+                        <span class="precio">$500</span>
+                        <a href="#producto"><button class="ampliar"><span>VER PRODUCTO</span></button></a>
+                    </div>
+                </div>
+                <div class="producto-info-ampliado">
+                    <span class="nombre">nombre</span>
+                    
+                    <div class="descripcion">
+                        <input type="radio" id="detalle" class="detalle" checked></input>
+                        <label for="detalle" id="detallelabel"><span>DETALLES</span></label>
+
+                        <input type="radio" id="cuidado" class="cuidado"></input>
+                        <label for="cuidado" id="cuidadolabel"><span>CUIDADOS</span></label>
+                    </div>
+                    <div class="detalles"><p class="colores-disponibles"></p></div>
+                    <div class="cuidados"></div>
+                    <div class="fade"></div>
+                </div>
+                <div class="producto-imagenes">
+                    <div class="imagen-principal" style="background-image: url(../img/muestra3.jpeg);"></div>
+                    <div class="imagenes-todas">
+                        <input type="radio" name="img-2" id="foto1" checked>
+                        <label id="label1-2" for="foto1-2" style="background-image: url(../img/muestra3.jpeg);"></label>
+                        
+                        <input type="radio" name="img-2" id="foto2">
+                        <label id="label1-2" for="foto1-2" style="background-image: url(../img/muestra3.jpeg);"></label>
+                        
+                        <input type="radio" name="img-2" id="foto3">
+                        <label id="label3-2" for="foto3-2" style="background-image: url(../img/muestra5.jpeg);"></label>
+                        
+                        <input type="radio" name="img-2" id="foto4">
+                        <label id="label4-2" for="foto4-2" style="background-image: url(../img/muestra6.jpeg);"></label>
+            
+                    </div>
+                </div>
+                <a href="#producto"><div class="cerrar"><i class="fa-solid fa-xmark"></i></div></a>
+            </div>   
+        </template>
+
+        </div>
       </section>
 
       <section class="ofertas" id="ofertas">
