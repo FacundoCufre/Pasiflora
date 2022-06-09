@@ -409,6 +409,434 @@ main .nuevos .nuevos-productos, main .nuevos .ofertas-productos, main .ofertas .
   justify-content: space-evenly;
   width: 100%;
 }
+main .nuevos .nuevos-productos .producto, main .nuevos .ofertas-productos .producto, main .ofertas .nuevos-productos .producto, main .ofertas .ofertas-productos .producto {
+  height: 340px;
+  width: 280px;
+  margin: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  align-items: flex-end;
+  background-position: center;
+  background-size: cover;
+}
+main .nuevos .nuevos-productos .producto .producto-info, main .nuevos .ofertas-productos .producto .producto-info, main .ofertas .nuevos-productos .producto .producto-info, main .ofertas .ofertas-productos .producto .producto-info {
+  height: 40px;
+  width: 100%;
+  transition: all 0.4s;
+  background-color: rgb(39, 54, 68);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f6f3ea;
+  position: relative;
+}
+main .nuevos .nuevos-productos .producto .producto-info .nombre, main .nuevos .ofertas-productos .producto .producto-info .nombre, main .ofertas .nuevos-productos .producto .producto-info .nombre, main .ofertas .ofertas-productos .producto .producto-info .nombre {
+  width: 90%;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  text-align: center;
+}
+main .nuevos .nuevos-productos .producto .producto-info .producto-info-contenido, main .nuevos .ofertas-productos .producto .producto-info .producto-info-contenido, main .ofertas .nuevos-productos .producto .producto-info .producto-info-contenido, main .ofertas .ofertas-productos .producto .producto-info .producto-info-contenido {
+  position: absolute;
+  transition: all 0.2s;
+  opacity: 0;
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .nuevos .nuevos-productos .producto .producto-info .producto-info-contenido span, main .nuevos .ofertas-productos .producto .producto-info .producto-info-contenido span, main .ofertas .nuevos-productos .producto .producto-info .producto-info-contenido span, main .ofertas .ofertas-productos .producto .producto-info .producto-info-contenido span {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+}
+main .nuevos .nuevos-productos .producto .producto-info .producto-info-contenido .precio-anterior, main .nuevos .ofertas-productos .producto .producto-info .producto-info-contenido .precio-anterior, main .ofertas .nuevos-productos .producto .producto-info .producto-info-contenido .precio-anterior, main .ofertas .ofertas-productos .producto .producto-info .producto-info-contenido .precio-anterior {
+  text-decoration: line-through;
+  text-decoration-color: #f6f3ea;
+  font-size: 15px;
+  padding-top: 5px;
+  line-height: 30px;
+}
+main .nuevos .nuevos-productos .producto .producto-info .producto-info-contenido button, main .nuevos .ofertas-productos .producto .producto-info .producto-info-contenido button, main .ofertas .nuevos-productos .producto .producto-info .producto-info-contenido button, main .ofertas .ofertas-productos .producto .producto-info .producto-info-contenido button {
+  font-size: 10px;
+  font-family: "Gabriela", serif;
+  height: 30px;
+  width: 100px;
+  background: none;
+  border: 1px solid #f6f3ea;
+  border-radius: 15px;
+  color: #f6f3ea;
+  text-decoration: none;
+}
+main .nuevos .nuevos-productos .producto .producto-info .producto-info-contenido button:hover, main .nuevos .ofertas-productos .producto .producto-info .producto-info-contenido button:hover, main .ofertas .nuevos-productos .producto .producto-info .producto-info-contenido button:hover, main .ofertas .ofertas-productos .producto .producto-info .producto-info-contenido button:hover {
+  cursor: pointer;
+  background-color: #f6f3ea;
+  color: rgb(39, 54, 68);
+}
+main .nuevos .nuevos-productos .producto .producto-info .producto-info-contenido button:hover span, main .nuevos .ofertas-productos .producto .producto-info .producto-info-contenido button:hover span, main .ofertas .nuevos-productos .producto .producto-info .producto-info-contenido button:hover span, main .ofertas .ofertas-productos .producto .producto-info .producto-info-contenido button:hover span {
+  cursor: pointer;
+}
+main .nuevos .nuevos-productos .producto:hover .nombre, main .nuevos .ofertas-productos .producto:hover .nombre, main .ofertas .nuevos-productos .producto:hover .nombre, main .ofertas .ofertas-productos .producto:hover .nombre {
+  border-bottom: solid 1px #f6f3ea;
+}
+main .nuevos .nuevos-productos .producto:hover .producto-info, main .nuevos .ofertas-productos .producto:hover .producto-info, main .ofertas .nuevos-productos .producto:hover .producto-info, main .ofertas .ofertas-productos .producto:hover .producto-info {
+  height: 120px;
+  opacity: 0.9;
+}
+main .nuevos .nuevos-productos .producto:hover .producto-info-contenido, main .nuevos .ofertas-productos .producto:hover .producto-info-contenido, main .ofertas .nuevos-productos .producto:hover .producto-info-contenido, main .ofertas .ofertas-productos .producto:hover .producto-info-contenido {
+  opacity: 1;
+}
+main .nuevos .nuevos-productos .producto .producto-info-ampliado, main .nuevos .nuevos-productos .producto .cerrar, main .nuevos .nuevos-productos .producto .imagenes-todas, main .nuevos .nuevos-productos .producto .imagenes-todas label, main .nuevos .ofertas-productos .producto .producto-info-ampliado, main .nuevos .ofertas-productos .producto .cerrar, main .nuevos .ofertas-productos .producto .imagenes-todas, main .nuevos .ofertas-productos .producto .imagenes-todas label, main .ofertas .nuevos-productos .producto .producto-info-ampliado, main .ofertas .nuevos-productos .producto .cerrar, main .ofertas .nuevos-productos .producto .imagenes-todas, main .ofertas .nuevos-productos .producto .imagenes-todas label, main .ofertas .ofertas-productos .producto .producto-info-ampliado, main .ofertas .ofertas-productos .producto .cerrar, main .ofertas .ofertas-productos .producto .imagenes-todas, main .ofertas .ofertas-productos .producto .imagenes-todas label {
+  display: none;
+}
+main .nuevos .nuevos-productos .producto-ampliado, main .nuevos .ofertas-productos .producto-ampliado, main .ofertas .nuevos-productos .producto-ampliado, main .ofertas .ofertas-productos .producto-ampliado {
+  width: 950px;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info, main .nuevos .ofertas-productos .producto-ampliado .producto-info, main .ofertas .nuevos-productos .producto-ampliado .producto-info, main .ofertas .ofertas-productos .producto-ampliado .producto-info {
+  display: none;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60%;
+  background-color: rgb(39, 54, 68);
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  color: #f6f3ea;
+  position: relative;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .nombre, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .nombre, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .nombre, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .nombre {
+  margin-top: 20px;
+  padding: 0 10px 5px 10px;
+  border-bottom: #a1caf1 solid 1px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  color: #a1caf1;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion {
+  margin-top: 10px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion input, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion input, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion input, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion input {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion .detalle:checked + label, main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion .cuidado:checked + label, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion .detalle:checked + label, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion .cuidado:checked + label, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion .detalle:checked + label, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion .cuidado:checked + label, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion .detalle:checked + label, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion .cuidado:checked + label {
+  border-bottom: 2px solid #f6f3ea;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion label, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion label, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion label, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion label {
+  font-size: 15px;
+  height: 75%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados {
+  position: absolute;
+  font-family: "Gabriela", serif;
+  top: 128px;
+  width: 100%;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles li, main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles li, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles li, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles li, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li {
+  margin-bottom: 4px;
+  list-style: none;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles {
+  visibility: visible;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div {
+  display: flex;
+  flex-direction: column;
+  height: 33%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div span, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div span, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div span, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div span {
+  font-size: 20px;
+  border-bottom: 1px solid #a1caf1;
+  padding-bottom: 5px;
+  font-family: "Cormorant Garamond", serif;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a {
+  text-decoration: none;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a .boton-compra, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a .boton-compra, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a .boton-compra, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a .boton-compra {
+  border: 1px solid #a1caf1;
+  height: 32px;
+  width: 82px;
+  border-radius: 5px;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a .boton-compra .boton-compra-texto, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a .boton-compra .boton-compra-texto, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a .boton-compra .boton-compra-texto, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a .boton-compra .boton-compra-texto {
+  border: none;
+  color: #a1caf1;
+  font-weight: 700;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a:hover, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a:hover, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a:hover, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a:hover {
+  background-color: #a1caf1;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a:hover .boton-compra .boton-compra-texto, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a:hover .boton-compra .boton-compra-texto, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles a:hover .boton-compra .boton-compra-texto, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles a:hover .boton-compra .boton-compra-texto {
+  color: rgb(39, 54, 68);
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles .colores-disponibles, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles .colores-disponibles, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles .colores-disponibles, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles .colores-disponibles {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #a1caf1;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados {
+  visibility: hidden;
+  padding-left: 30px;
+  padding-right: 15px;
+  text-align: left;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li {
+  margin-bottom: 14px;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li span, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li span, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li span, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li span {
+  color: #a1caf1;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .fade, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .fade, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .fade, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .fade {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, rgb(39, 54, 68) 0%, transparent 50%);
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes {
+  height: 100%;
+  width: 40%;
+  background-color: #a1caf1;
+  display: flex;
+  flex-direction: column;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagen-principal, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagen-principal, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagen-principal, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagen-principal {
+  height: 80%;
+  width: 100%;
+  background-color: bisque;
+  background-size: cover;
+  background-position: center;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas input, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas input, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas input, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas input {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas input[type=radio]:checked + label, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas input[type=radio]:checked + label, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas input[type=radio]:checked + label, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas input[type=radio]:checked + label {
+  transform: scale(0.9, 0.9);
+  border: 3px solid rgb(39, 54, 68);
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas label, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas label, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas label, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas label {
+  height: 100%;
+  width: 25%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  transition: all 0.1s;
+}
+main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas label:hover, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas label:hover, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas label:hover, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas label:hover {
+  transform: scale(0.9, 0.9);
+}
+main .nuevos .nuevos-productos .producto-ampliado .cerrar, main .nuevos .ofertas-productos .producto-ampliado .cerrar, main .ofertas .nuevos-productos .producto-ampliado .cerrar, main .ofertas .ofertas-productos .producto-ampliado .cerrar {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f6f3ea;
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+}
+main .nuevos .nuevos-productos .producto-ampliado .cerrar:hover i, main .nuevos .ofertas-productos .producto-ampliado .cerrar:hover i, main .ofertas .nuevos-productos .producto-ampliado .cerrar:hover i, main .ofertas .ofertas-productos .producto-ampliado .cerrar:hover i {
+  cursor: pointer;
+  font-size: 20px;
+}
+main .nuevos .nuevos-productos .producto-ampliado .cerrar:hover, main .nuevos .ofertas-productos .producto-ampliado .cerrar:hover, main .ofertas .nuevos-productos .producto-ampliado .cerrar:hover, main .ofertas .ofertas-productos .producto-ampliado .cerrar:hover {
+  top: 9px;
+  left: 9px;
+}
+@media screen and (max-width: 1080px) {
+  main .nuevos .nuevos-productos .producto-ampliado, main .nuevos .ofertas-productos .producto-ampliado, main .ofertas .nuevos-productos .producto-ampliado, main .ofertas .ofertas-productos .producto-ampliado {
+    width: 780px;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 880px) {
+  main .nuevos .nuevos-productos .producto-ampliado, main .nuevos .ofertas-productos .producto-ampliado, main .ofertas .nuevos-productos .producto-ampliado, main .ofertas .ofertas-productos .producto-ampliado {
+    width: 500px;
+    height: 700px;
+    flex-direction: column;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado {
+    width: 100%;
+    height: 50%;
+    font-size: 18px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .nombre, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .nombre, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .nombre, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .nombre {
+    margin-top: 10px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados {
+    height: 200px;
+    top: 110px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados {
+    font-size: 13px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li {
+    margin-bottom: 6px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div span, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div span, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div span, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div span {
+    font-size: 17px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div p, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div p, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div p, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div p {
+    font-size: 13px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div ul, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div ul, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div ul, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div ul {
+    font-size: 13px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes {
+    width: 100%;
+    height: 50%;
+    flex-direction: row;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagen-principal, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagen-principal, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagen-principal, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagen-principal {
+    height: 100%;
+    width: 80%;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas label, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas label, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas label, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas label {
+    height: 25%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 615px) {
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion {
+    height: 30px;
+    margin-top: 5px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados {
+    height: 245px;
+    top: 110px;
+    padding: 0;
+    padding-left: 5px;
+    overflow: scroll;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados li, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados li {
+    margin: 2px;
+  }
+}
+@media screen and (max-width: 500px) {
+  main .nuevos .nuevos-productos .producto, main .nuevos .ofertas-productos .producto, main .ofertas .nuevos-productos .producto, main .ofertas .ofertas-productos .producto {
+    height: 270px;
+    width: 220px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado, main .nuevos .ofertas-productos .producto-ampliado, main .ofertas .nuevos-productos .producto-ampliado, main .ofertas .ofertas-productos .producto-ampliado {
+    width: 350px;
+    height: 600px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado {
+    font-size: 13px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .descripcion, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .descripcion {
+    font-size: 15px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados {
+    top: 90px;
+    height: 200px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 80px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles div, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles div {
+    font-size: 14px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .fade, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .fade, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .fade, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .fade {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(39, 54, 68));
+    z-index: 3;
+    left: 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  main .nuevos .nuevos-productos .producto, main .nuevos .ofertas-productos .producto, main .ofertas .nuevos-productos .producto, main .ofertas .ofertas-productos .producto {
+    height: 220px;
+    width: 180px;
+    margin: 10px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado, main .nuevos .ofertas-productos .producto-ampliado, main .ofertas .nuevos-productos .producto-ampliado, main .ofertas .ofertas-productos .producto-ampliado {
+    width: 350px;
+    height: 600px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado {
+    font-size: 12px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .nombre, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .nombre, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .nombre, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .nombre {
+    font-size: 17px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .detalles, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .detalles {
+    top: 80px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .nuevos .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .nuevos-productos .producto-ampliado .producto-info-ampliado .cuidados, main .ofertas .ofertas-productos .producto-ampliado .producto-info-ampliado .cuidados {
+    top: 95px;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes {
+    display: flex;
+    flex-direction: column;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagen-principal, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagen-principal, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagen-principal, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagen-principal {
+    height: 80%;
+    width: 100%;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  main .nuevos .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas label, main .nuevos .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas label, main .ofertas .nuevos-productos .producto-ampliado .producto-imagenes .imagenes-todas label, main .ofertas .ofertas-productos .producto-ampliado .producto-imagenes .imagenes-todas label {
+    height: 100%;
+    width: 25%;
+  }
+}
 main .consideraciones {
   width: 80%;
   margin-inline: auto;

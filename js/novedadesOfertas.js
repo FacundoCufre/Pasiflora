@@ -139,6 +139,9 @@ const renderCards = (productosCategoria, contenedor) => {
                     ${medidasText}
                 </ul>
             </div>
+            <a href="https://wa.me/c/51902003274"><div class="boton-compra">
+                <span class="boton-compra-texto">Comprar</span>
+            </div></a>
             <p class="colores-disponibles"></p>
         `;
         if(product.hasOwnProperty('colores')) {
